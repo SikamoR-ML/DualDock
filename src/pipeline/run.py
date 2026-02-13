@@ -19,6 +19,10 @@ def main() -> None:
     p.add_argument("--stage", default="analyze", choices=["generate", "dock", "analyze"])
     args = p.parse_args()
 
+    if args.config == "":
+        args.config = None
+
+
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
 
