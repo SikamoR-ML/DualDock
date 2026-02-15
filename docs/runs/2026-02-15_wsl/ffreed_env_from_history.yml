@@ -1,0 +1,13 @@
+name: ffreed
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7.12
+  - pytorch=1.12.1
+  - torchvision=0.13.1
+  - cudatoolkit=11.3.1
+  - dgl-cuda11.3=0.9.1post1
+  - rdkit=2020.9.1.0
+  - molsets
+  - openbabel
+prefix: /home/sikamor/miniforge3/envs/ffreed
