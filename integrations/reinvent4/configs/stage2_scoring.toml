@@ -1,0 +1,19 @@
+### Stage 2 scoring components
+[[component]]
+[component.QED]
+
+[[component.QED.endpoint]]
+weight = 0.5  # user chosen name for output
+name = "QED Score"  # weight to fine-tune the relevance of this component
+
+[[component]]
+[component.ExternalProcess]
+
+[[component.ExternalProcess.endpoint]]
+name = "Boltz2"
+weight = 0.5
+
+[component.ExternalProcess.endpoint.params]
+executable = "/home/sikamor/miniforge3/envs/boltz2/bin/python"
+args = "/home/sikamor/projects/REINVENT4/scripts/boltz2_predict.py"
+property = "boltz2_score"

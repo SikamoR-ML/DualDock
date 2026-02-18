@@ -28,6 +28,7 @@ BOLTZ_BIN: str = os.environ.get("BOLTZ_BIN", "boltz")
 # Compute settings
 BOLTZ_ACCEL: str = os.environ.get("BOLTZ_ACCEL", "gpu")   # gpu|cpu|tpu
 BOLTZ_DEVICES: str = os.environ.get("BOLTZ_DEVICES", "1") # number of devices (string for CLI)
+BOLTZ_DEBUG: bool = os.environ.get("BOLTZ_DEBUG", "0") == "1"
 
 # Runtime guard
 TIMEOUT_SEC: int = int(os.environ.get("BOLTZ_TIMEOUT", "300"))
@@ -123,19 +124,20 @@ def _run_boltz_predict(in_dir: Path, out_dir: Path) -> int:
         cmd,
         timeout=TIMEOUT_SEC,
         stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,  # change to sys.stderr if you want to see Boltz logs
+        stderr=(sys.stderr if BOLTZ_DEBUG else subprocess.DEVNULL),  # change to sys.stderr if you want to see Boltz logs
         check=False,
     )
     return p.returncode
 
 
 def _read_affinity_scores(out_dir: Path, names: List[str], in_dir_name: str) -> List[float]:
-    pred_root = _find_predictions_root(out_dir, in_dir_name)
     """
     Read Boltz affinity outputs and map to scores.
+
     Expected file:
       <pred_root>/<name>/affinity_<name>.json
-    where pred_root is usually:
+
+    Where pred_root is usually:
       out_dir/boltz_results_<in_dir_name>/predictions
     """
     pred_root = _find_predictions_root(out_dir, in_dir_name)
@@ -148,8 +150,14 @@ def _read_affinity_scores(out_dir: Path, names: List[str], in_dir_name: str) -> 
             continue
 
         data = json.loads(aff_path.read_text(encoding="utf-8"))
-        aff = float(data.get("affinity_pred_value", 0.0))
-        scores.append(_sigmoid(aff))
+
+        v0 = float(data.get("affinity_pred_value", 0.0))
+        v1 = float(data.get("affinity_pred_value1", v0))
+        v2 = float(data.get("affinity_pred_value2", v0))
+        mean_v = (v0 + v1 + v2) / 3.0
+
+        # scale=3.0 to avoid sigmoid saturation; tune later
+        scores.append(_sigmoid(mean_v / 3.0))
 
     return scores
 
