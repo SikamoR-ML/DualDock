@@ -4,3 +4,12 @@ __pycache__/
 .DS_Store
 .env
 .venv
+
+# REINVENT / RL artifacts
+*_learning*.csv
+*_learning*.json
+*.chkpt
+*.log
+tb_logs*/
+configs/tb_logs_*/
+assets/
