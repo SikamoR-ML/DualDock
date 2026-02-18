@@ -5,11 +5,13 @@ __pycache__/
 .env
 .venv
 
-# REINVENT / RL artifacts
-*_learning*.csv
-*_learning*.json
-*.chkpt
+# REINVENT / RL artifacts (store locally under runs/)
+runs/**
+
+# common junk
 *.log
+*.chkpt
 tb_logs*/
 configs/tb_logs_*/
-assets/
+*_learning*.csv
+*_learning*.json
