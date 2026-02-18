@@ -31,3 +31,12 @@ __pycache__/
 # misc
 .DS_Store
 requirements-freeze*.txt
+# outputs / runs
+runs/
+tb_logs*/
+_staged_learning.json
+staged_learning_*.csv
+*.chkpt
+*.ckpt
+*.pt
+*.log
