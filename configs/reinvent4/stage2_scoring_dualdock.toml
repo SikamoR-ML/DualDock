@@ -1,0 +1,21 @@
+### Stage 2 scoring components (DualDock)
+
+[[component]]
+[component.QED]
+
+[[component.QED.endpoint]]
+weight = 0.2
+name = "QED Score"
+
+# DualDock external scorer: returns "dualdock_score" in [0..1]
+[[component]]
+[component.ExternalProcess]
+
+[[component.ExternalProcess.endpoint]]
+name = "DualDock"
+weight = 0.8
+
+[component.ExternalProcess.endpoint.params]
+executable = "/home/sikamor/miniforge3/envs/boltz2/bin/python"
+args = "/home/sikamor/projects/DualDock/scripts/dualdock_predict.py"
+property = "boltz2_score"
