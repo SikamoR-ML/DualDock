@@ -114,7 +114,6 @@ pytorch-lightning==2.5.0
 pytz==2025.2
 PyYAML==6.0.2
 rdkit==2025.9.5
--e git+ssh://git@github.com/SikamoR-ML/REINVENT4.git@d74387f68ec0589af9e7e1e9b0720dd717196820#egg=reinvent
 requests==2.32.3
 requests-mock==1.12.1
 roman-numerals==4.1.0
