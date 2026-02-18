@@ -1,23 +1,36 @@
-# python
-__pycache__/
-*.pyc
-.venv/
-.env/
-.conda/
-*.egg-info/
-
-# mac
-.DS_Store
-
-# local freeze files
-requirements-freeze*.txt
-
-# outputs / runs (generated artifacts)
+# ---------------------------
+# Runtime artifacts (do not commit)
+# ---------------------------
 runs/
+results/
 tb_logs*/
-_staged_learning.json
-staged_learning_*.csv
+tb_logs_*/
 *.chkpt
 *.ckpt
 *.pt
+*.pth
+*.pkl
+
+# Logs and reports
 *.log
+*_learning_*.csv
+staged_learning_*.csv
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Env / venv folders inside repo
+env/
+.venv/
+venv/
+
+# OS/editor junk
+.DS_Store
+.ipynb_checkpoints/

@@ -1,0 +1,11 @@
+# DualDock targets config (paths are relative to repo root)
+
+# "single" or "dual"
+mode = "dual"
+
+[single]
+template = "assets/templates/target.yaml"
+
+[dual]
+target = "assets/templates/target.yaml"
+offtarget = "assets/templates/offtarget.yaml"

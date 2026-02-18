@@ -1,244 +1,403 @@
 #!/usr/bin/env python3
 """
-REINVENT4 ExternalProcess predictor wrapper for Boltz-2.
+REINVENT4 ExternalProcess wrapper for Boltz-2 via YAML templates.
 
-Contract:
-- Input:  SMILES lines on stdin (one SMILES per line).
-- Output: JSON on stdout in the form:
-    {"payload": {"boltz2_score": [float, float, ...]}}
-  where the list length must match the number of input SMILES.
+Contract (REINVENT ExternalProcess):
+- stdin:  SMILES (one per line)
+- stdout: {"payload": {"boltz2_score": [float, ...]}}
+  length MUST match number of input SMILES.
 
-Notes:
-- Boltz `predict` expects DATA to be a YAML file or a directory containing YAML files.
-- This wrapper generates per-ligand YAML files in a temp folder, runs `boltz predict`,
-  then reads affinity JSON outputs and maps them to [0, 1] scores.
+Boltz expects DATA to be:
+- a YAML file, or
+- a directory containing YAML files
+We use a directory of per-ligand YAMLs for stable mapping.
+
+Modes (set via CLI args, env as fallback):
+- Single:
+    --mode single --template <path/to/template.yaml>
+    env fallback: BOLTZ_YAML_TEMPLATE
+  score = affinity_score(target)
+
+- DualDock:
+    --mode dual --target <target_template.yaml> --offtarget <offtarget_template.yaml>
+    env fallback: DUALDOCK_TARGET_TEMPLATE and DUALDOCK_OFFTARGET_TEMPLATE
+  score = min(target, 1 - off_target)
+
+stdout MUST stay clean (JSON only). Logs go to stderr only in debug mode.
 """
 
-import sys, json, os, math, shutil, tempfile, subprocess
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import os
+import shutil
+import subprocess
+import sys
+import re
+import tempfile
 from pathlib import Path
-from typing import List, Optional
+from typing import Optional
 
 
 # -----------------------------
-# Configuration via environment
+# Config via environment (fallback)
 # -----------------------------
-# Path to `boltz` executable (must be in PATH by default)
 BOLTZ_BIN: str = os.environ.get("BOLTZ_BIN", "boltz")
+BOLTZ_ACCEL: str = os.environ.get("BOLTZ_ACCEL", "gpu")      # gpu|cpu|tpu
+BOLTZ_DEVICES: str = os.environ.get("BOLTZ_DEVICES", "1")
 
-# Compute settings
-BOLTZ_ACCEL: str = os.environ.get("BOLTZ_ACCEL", "gpu")   # gpu|cpu|tpu
-BOLTZ_DEVICES: str = os.environ.get("BOLTZ_DEVICES", "1") # number of devices (string for CLI)
 BOLTZ_DEBUG: bool = os.environ.get("BOLTZ_DEBUG", "0") == "1"
-
-# Runtime guard
 TIMEOUT_SEC: int = int(os.environ.get("BOLTZ_TIMEOUT", "300"))
 
-# Fast settings for RL / smoke tests (defaults are heavy and feel "hung")
 RECYCLE: str = os.environ.get("BOLTZ_RECYCLE", "1")
 SAMP_STEPS: str = os.environ.get("BOLTZ_STEPS", "30")
 DIFF_SAMPLES: str = os.environ.get("BOLTZ_DIFF", "1")
 AFF_STEPS: str = os.environ.get("BOLTZ_AFF_STEPS", "30")
 AFF_DIFF: str = os.environ.get("BOLTZ_AFF_DIFF", "1")
 
-# Protein definition source (choose ONE):
-# A) Provide protein sequence directly
-PROTEIN_SEQ: str = os.environ.get("BOLTZ_PROTEIN_SEQ", "").strip()
+KEEP_TMP: bool = os.environ.get("BOLTZ_KEEP_TMP", "0") == "1"
 
-# B) Provide a YAML template file path with a __SMILES__ placeholder
-#    Example template should include protein definition and ligand with smiles: "__SMILES__"
-YAML_TEMPLATE_PATH: str = os.environ.get("BOLTZ_YAML_TEMPLATE", "").strip()
+# env fallbacks for paths
+ENV_SINGLE_TEMPLATE: str = os.environ.get("BOLTZ_YAML_TEMPLATE", "").strip()
+ENV_TARGET_TEMPLATE: str = os.environ.get("DUALDOCK_TARGET_TEMPLATE", "").strip()
+ENV_OFFTARGET_TEMPLATE: str = os.environ.get("DUALDOCK_OFFTARGET_TEMPLATE", "").strip()
+
+
+# -----------------------------
+# CLI
+# -----------------------------
+def _parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(add_help=True)
+    p.add_argument("--mode", choices=["auto", "single", "dual"], default="auto")
+    p.add_argument("--template", default=None, help="single-target YAML template path")
+    p.add_argument("--target", default=None, help="dual target YAML template path")
+    p.add_argument("--offtarget", default=None, help="dual off-target YAML template path")
+    p.add_argument("--config", default=None, help="targets TOML config path (relative to repo root allowed)")
+    return p.parse_args()
 
 
 # -----------------------------
 # Helpers
 # -----------------------------
-def _sigmoid(x: float) -> float:
-    """Map any real value to (0, 1). You can replace this with a domain-specific transform."""
-    return 1.0 / (1.0 + math.exp(-x))
+def _dbg(msg: str) -> None:
+    if BOLTZ_DEBUG:
+        print(f"[dualdock_predict] {msg}", file=sys.stderr, flush=True)
 
 
-def _read_smiles_from_stdin() -> List[str]:
-    """Read SMILES from stdin, strip blanks."""
+def _emit(scores: list[float]) -> None:
+    print(json.dumps({"payload": {"boltz2_score": scores}}))
+
+
+def _read_smiles() -> list[str]:
     raw = sys.stdin.read()
     return [s.strip() for s in raw.splitlines() if s.strip()]
 
 
-def _load_template_text(path_str: str) -> Optional[str]:
-    """Load YAML template file if provided."""
-    if not path_str:
-        return None
+def _load_text(path_str: str) -> str:
     p = Path(path_str).expanduser().resolve()
+    if not p.exists():
+        raise RuntimeError(f"Template not found: {p}")
     return p.read_text(encoding="utf-8")
 
 
-def _make_yaml_from_seq(seq: str, smi: str) -> str:
-    """
-    Minimal Boltz YAML for protein+ligand affinity.
-    - Uses msa: empty for speed and to avoid server calls.
-    """
-    # NOTE: keep single quotes around SMILES to avoid YAML parsing issues.
-    return (
-        "version: 1\n"
-        "sequences:\n"
-        "  - protein:\n"
-        "      id: A\n"
-        f"      sequence: {seq}\n"
-        "      msa: empty\n"
-        "  - ligand:\n"
-        "      id: B\n"
-        f"      smiles: '{smi}'\n"
-        "properties:\n"
-        "  - affinity:\n"
-        "      binder: B\n"
-    )
-
-
-def _make_yaml_from_template(template_text: str, smi: str) -> str:
-    """Replace __SMILES__ placeholder in a user-provided template."""
+def _yaml_from_template(template_text: str, smi: str) -> str:
     if "__SMILES__" not in template_text:
-        raise RuntimeError("YAML template must contain __SMILES__ placeholder")
-    # Wrap SMILES in quotes in the template itself (recommended).
+        raise RuntimeError("Template must contain __SMILES__ placeholder")
     return template_text.replace("__SMILES__", smi)
 
 
+def _sigmoid(x: float) -> float:
+    if x >= 50:
+        return 1.0
+    if x <= -50:
+        return 0.0
+    return 1.0 / (1.0 + math.exp(-x))
+
+
 def _run_boltz_predict(in_dir: Path, out_dir: Path) -> int:
-    """Run `boltz predict` on a directory of YAML files. Returns process return code."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+
     cmd = [
-        BOLTZ_BIN, "predict", str(in_dir),
+        BOLTZ_BIN, "predict",
+        str(in_dir),
         "--out_dir", str(out_dir),
-        "--accelerator", BOLTZ_ACCEL,
-        "--devices", str(BOLTZ_DEVICES),
         "--model", "boltz2",
-        "--override",
-        "--recycling_steps", str(RECYCLE),
-        "--sampling_steps", str(SAMP_STEPS),
-        "--diffusion_samples", str(DIFF_SAMPLES),
-        "--sampling_steps_affinity", str(AFF_STEPS),
-        "--diffusion_samples_affinity", str(AFF_DIFF),
-        "--num_workers", "0",
+        "--accelerator", BOLTZ_ACCEL,
+        "--devices", BOLTZ_DEVICES,
+        "--recycle", RECYCLE,
+        "--sampling_steps", SAMP_STEPS,
+        "--diffusion_samples", DIFF_SAMPLES,
+        "--affinity_steps", AFF_STEPS,
+        "--affinity_diffusion_samples", AFF_DIFF,
     ]
 
-    # IMPORTANT: suppress Boltz stdout so this wrapper can print ONLY JSON to stdout.
-    # Otherwise REINVENT ExternalProcess JSON parsing will break.
-    p = subprocess.run(
-        cmd,
-        timeout=TIMEOUT_SEC,
-        stdout=subprocess.DEVNULL,
-        stderr=(sys.stderr if BOLTZ_DEBUG else subprocess.DEVNULL),  # change to sys.stderr if you want to see Boltz logs
-        check=False,
-    )
-    return p.returncode
+    _dbg("Running boltz predict")
+    _dbg("CMD: " + " ".join(cmd))
 
-
-def _read_affinity_scores(out_dir: Path, names: List[str], in_dir_name: str) -> List[float]:
-    """
-    Read Boltz affinity outputs and map to scores.
-
-    Expected file:
-      <pred_root>/<name>/affinity_<name>.json
-
-    Where pred_root is usually:
-      out_dir/boltz_results_<in_dir_name>/predictions
-    """
-    pred_root = _find_predictions_root(out_dir, in_dir_name)
-
-    scores: List[float] = []
-    for name in names:
-        aff_path = pred_root / name / f"affinity_{name}.json"
-        if not aff_path.exists():
-            scores.append(0.0)
-            continue
-
-        data = json.loads(aff_path.read_text(encoding="utf-8"))
-
-        v0 = float(data.get("affinity_pred_value", 0.0))
-        v1 = float(data.get("affinity_pred_value1", v0))
-        v2 = float(data.get("affinity_pred_value2", v0))
-        mean_v = (v0 + v1 + v2) / 3.0
-
-        # scale=3.0 to avoid sigmoid saturation; tune later
-        scores.append(_sigmoid(mean_v / 3.0))
-
-    return scores
+    try:
+        p = subprocess.run(
+            cmd,
+            stdout=subprocess.DEVNULL,  # keep stdout clean
+            stderr=(sys.stderr if BOLTZ_DEBUG else subprocess.DEVNULL),
+            timeout=TIMEOUT_SEC,
+            check=False,
+            text=True,
+        )
+        _dbg(f"boltz rc={p.returncode}")
+        return int(p.returncode)
+    except subprocess.TimeoutExpired:
+        _dbg(f"boltz timeout after {TIMEOUT_SEC}s for {in_dir}")
+        return 124
+    except Exception as e:
+        _dbg(f"boltz failed: {e}")
+        return 1
 
 
 def _find_predictions_root(out_dir: Path, in_dir_name: str) -> Path:
-    """
-    Boltz writes results under:
-      out_dir/boltz_results_<in_dir_name>/predictions/...
-    but we keep it robust by falling back to glob search.
-    """
-    # Primary expected location
     primary = out_dir / f"boltz_results_{in_dir_name}" / "predictions"
     if primary.exists():
         return primary
 
-    # Fallback: first predictions folder found under out_dir/boltz_results_*/predictions
     hits = sorted(out_dir.glob("boltz_results_*/predictions"))
     if hits:
         return hits[0]
 
-    # If nothing found, return the primary path (caller will handle missing)
     return primary
 
 
-def main() -> None:
-    smilies = _read_smiles_from_stdin()
+def _read_scores(out_dir: Path, names: list[str], in_dir_name: str) -> list[float]:
+    pred_root = _find_predictions_root(out_dir, in_dir_name)
+    if not pred_root.exists():
+        _dbg(f"predictions root not found: {pred_root}")
+        return [0.0] * len(names)
 
-    # If REINVENT asks to score an empty batch, return empty payload.
-    if not smilies:
-        print(json.dumps({"payload": {"boltz2_score": []}}))
-        return
+    scores: list[float] = []
+    for name in names:
+        aff_path = pred_root / name / f"affinity_{name}.json"
+        if not aff_path.exists():
+            _dbg(f"missing affinity: {aff_path}")
+            scores.append(0.0)
+            continue
 
-    # Validate protein/template configuration.
-    template_text = _load_template_text(YAML_TEMPLATE_PATH)
-    if template_text is None and not PROTEIN_SEQ:
-        raise RuntimeError("Set BOLTZ_PROTEIN_SEQ or BOLTZ_YAML_TEMPLATE")
+        try:
+            data = json.loads(aff_path.read_text(encoding="utf-8"))
+            v0 = float(data.get("affinity_pred_value", 0.0))
+            v1 = float(data.get("affinity_pred_value1", v0))
+            v2 = float(data.get("affinity_pred_value2", v0))
+            mean_v = (v0 + v1 + v2) / 3.0
+            scores.append(_sigmoid(mean_v / 3.0))
+        except Exception as e:
+            _dbg(f"failed parse {aff_path}: {e}")
+            scores.append(0.0)
 
-    # Create a temp workspace for Boltz inputs/outputs.
-    tmp_root = Path(tempfile.mkdtemp(prefix="boltz_batch_"))
+    return scores
+
+
+def _score_with_template(smiles: list[str], template_text: str, tag: str) -> tuple[list[float], Path]:
+    tmp_root = Path(tempfile.mkdtemp(prefix=f"boltz_{tag}_"))
     in_dir = tmp_root / "in"
     out_dir = tmp_root / "out"
     in_dir.mkdir(parents=True, exist_ok=True)
-    out_dir.mkdir(parents=True, exist_ok=True)
 
-    names: List[str] = []
+    names: list[str] = []
+    for i, smi in enumerate(smiles):
+        name = f"lig_{i:05d}"
+        names.append(name)
+        (in_dir / f"{name}.yaml").write_text(_yaml_from_template(template_text, smi), encoding="utf-8")
+
+    rc = _run_boltz_predict(in_dir, out_dir)
+    if rc != 0:
+        return ([0.0] * len(smiles), tmp_root)
+
+    return (_read_scores(out_dir, names, in_dir.name), tmp_root)
+
+
+def _combine(target: list[float], offtarget: list[float]) -> list[float]:
+    n = min(len(target), len(offtarget))
+    out: list[float] = []
+    for i in range(n):
+        t = float(target[i])
+        o = float(offtarget[i])
+        if t < 0.0:
+            t = 0.0
+        elif t > 1.0:
+            t = 1.0
+        if o < 0.0:
+            o = 0.0
+        elif o > 1.0:
+            o = 1.0
+        out.append(min(t, 1.0 - o))
+
+    if len(out) < len(target):
+        out.extend([0.0] * (len(target) - len(out)))
+    return out
+
+
+def _cleanup_tmp(tmp_paths: list[Path]) -> None:
+    if KEEP_TMP:
+        for p in tmp_paths:
+            _dbg(f"KEEP TMP: {p}")
+    else:
+        for p in tmp_paths:
+            shutil.rmtree(p, ignore_errors=True)
+
+
+def _repo_root() -> Path:
+    # scripts/dualdock_predict.py -> repo root is parent of scripts/
+    return Path(__file__).resolve().parents[1]
+
+
+def _strip_inline_comment(s: str) -> str:
+    # remove inline comments starting with '#', but keep content before it
+    if "#" in s:
+        return s.split("#", 1)[0].rstrip()
+    return s
+
+
+def _parse_targets_toml(path: Path) -> dict:
+    """
+    Minimal TOML parser for our needs.
+    Supports:
+      mode = "dual" | "single" | "auto"
+      [single] template = "..."
+      [dual] target = "..." ; offtarget = "..."
+    """
+    cfg = {"mode": "auto", "single": {}, "dual": {}}
+    section: Optional[str] = None
+
+    text = path.read_text(encoding="utf-8")
+    for raw in text.splitlines():
+        line = _strip_inline_comment(raw).strip()
+        if not line:
+            continue
+
+        m = re.match(r"^\[(?P<section>[A-Za-z0-9_]+)\]\s*$", line)
+        if m:
+            sec = m.group("section").strip()
+            section = sec if sec in ("single", "dual") else None
+            continue
+
+        if "=" not in line:
+            continue
+
+        key, val = [x.strip() for x in line.split("=", 1)]
+
+        # accept "..." or '...'
+        if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+            val = val[1:-1]
+
+        if section is None:
+            if key == "mode":
+                cfg["mode"] = val.strip()
+        else:
+            cfg[section][key] = val
+
+    return cfg
+
+
+def _abs_from_repo(root: Path, p: str) -> str:
+    if not p:
+        return ""
+    pp = Path(p)
+    if pp.is_absolute():
+        return str(pp)
+    return str((root / pp).resolve())
+
+
+# -----------------------------
+# Main
+# -----------------------------
+def main() -> None:
+    args = _parse_args()
+    smiles = _read_smiles()
+    if not smiles:
+        _emit([])
+        return
+
+    # Priority: CLI > ENV fallback
+    single_template = (args.template if args.template is not None else ENV_SINGLE_TEMPLATE).strip()
+    target_template = (args.target if args.target is not None else ENV_TARGET_TEMPLATE).strip()
+    offtarget_template = (args.offtarget if args.offtarget is not None else ENV_OFFTARGET_TEMPLATE).strip()
+       # Apply --config (relative to repo root allowed)
+    root = _repo_root()
+    if args.config:
+        cfg_path = Path(args.config)
+        if not cfg_path.is_absolute():
+            cfg_path = (root / cfg_path).resolve()
+
+        cfg = _parse_targets_toml(cfg_path)
+
+        # If args.mode is auto, allow config to define mode
+        cfg_mode = str(cfg.get("mode", "auto")).strip() or "auto"
+        if args.mode == "auto" and cfg_mode in ("single", "dual", "auto"):
+            args.mode = cfg_mode
+
+        if args.mode == "single":
+            t = str(cfg.get("single", {}).get("template", "")).strip()
+            if t:
+                single_template = _abs_from_repo(root, t)
+        elif args.mode == "dual":
+            t = str(cfg.get("dual", {}).get("target", "")).strip()
+            o = str(cfg.get("dual", {}).get("offtarget", "")).strip()
+            if t:
+                target_template = _abs_from_repo(root, t)
+            if o:
+                offtarget_template = _abs_from_repo(root, o)
+        else:
+            # auto: prefer dual if both present in config, else single
+            t = str(cfg.get("dual", {}).get("target", "")).strip()
+            o = str(cfg.get("dual", {}).get("offtarget", "")).strip()
+            s = str(cfg.get("single", {}).get("template", "")).strip()
+            if t and o:
+                target_template = _abs_from_repo(root, t)
+                offtarget_template = _abs_from_repo(root, o)
+            elif s:
+                single_template = _abs_from_repo(root, s)
+
+    # Mode selection
+    if args.mode == "single":
+        target_template = ""
+        offtarget_template = ""
+    elif args.mode == "dual":
+        single_template = ""
+    # auto:
+    # - if both target/offtarget are present -> dual
+    # - else -> single
+
+    dual_mode = bool(target_template and offtarget_template)
 
     try:
-        # Write one YAML per SMILES so we can retrieve per-ligand affinity outputs reliably.
-        for i, smi in enumerate(smilies):
-            name = f"lig_{i:04d}"
-            names.append(name)
-            yaml_path = in_dir / f"{name}.yaml"
+        if dual_mode:
+            t_text = _load_text(target_template)
+            o_text = _load_text(offtarget_template)
 
-            if template_text is not None:
-                yaml_text = _make_yaml_from_template(template_text, smi)
-            else:
-                yaml_text = _make_yaml_from_seq(PROTEIN_SEQ, smi)
+            t_scores, t_tmp = _score_with_template(smiles, t_text, "target")
+            o_scores, o_tmp = _score_with_template(smiles, o_text, "offtarget")
+            scores = _combine(t_scores, o_scores)
 
-            yaml_path.write_text(yaml_text, encoding="utf-8")
-
-        # Run Boltz and handle failures gracefully (do not crash the RL loop).
-        try:
-            rc = _run_boltz_predict(in_dir, out_dir)
-            if rc != 0:
-                scores = [0.0] * len(smilies)
-            else:
-                scores = _read_affinity_scores(out_dir, names, in_dir.name)
-        except subprocess.TimeoutExpired:
-            # Timeout: return zeros, do not kill REINVENT run.
-            scores = [0.0] * len(smilies)
-
-        # Emit the required JSON payload for REINVENT ExternalProcess.
-        print(json.dumps({"payload": {"boltz2_score": scores}}))
-
-    finally:
-        # Debug option: keep temp folder to inspect Boltz outputs.
-        keep_tmp = os.environ.get("BOLTZ_KEEP_TMP", "0") == "1"
-        if keep_tmp:
-            print(f"[DEBUG] Keeping tmp dir: {tmp_root}", file=sys.stderr)
+            _emit(scores)
+            _cleanup_tmp([t_tmp, o_tmp])
         else:
-            shutil.rmtree(tmp_root, ignore_errors=True)
+            if not single_template:
+                raise RuntimeError(
+                    "No templates provided. Use CLI:\n"
+                    "  single: --mode single --template <path>\n"
+                    "  dual:   --mode dual --target <path> --offtarget <path>\n"
+                    "Or env fallback:\n"
+                    "  BOLTZ_YAML_TEMPLATE or DUALDOCK_TARGET_TEMPLATE/DUALDOCK_OFFTARGET_TEMPLATE"
+                )
+
+            tmpl = _load_text(single_template)
+            scores, tmp = _score_with_template(smiles, tmpl, "single")
+            _emit(scores)
+            _cleanup_tmp([tmp])
+
+    except Exception as e:
+        _dbg(f"wrapper error: {e}")
+        _emit([0.0] * len(smiles))
+
 
 if __name__ == "__main__":
     main()

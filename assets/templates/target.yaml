@@ -1,0 +1,12 @@
+version: 1
+sequences:
+  - protein:
+      id: A
+      sequence: PASTE_TARGET_PROTEIN_SEQUENCE_HERE
+      msa: empty
+  - ligand:
+      id: B
+      smiles: '__SMILES__'
+properties:
+  - affinity:
+      binder: B

@@ -25,8 +25,8 @@ use_checkpoint = false  # if true read diversity filter from agent_file
 purge_memories = false  # if true purge all diversity filter memories after each stage
 
 ## Reinvent
-prior_file = "/home/sikamor/projects/REINVENT4/priors/reinvent.prior"
-agent_file = "/home/sikamor/projects/REINVENT4/priors/reinvent.prior"
+prior_file = "priors/reinvent.prior"
+agent_file = "priors/reinvent.prior"
 
 ## LibInvent
 #prior_file = "priors/libinvent.prior"
@@ -52,7 +52,7 @@ agent_file = "/home/sikamor/projects/REINVENT4/priors/reinvent.prior"
 #sample_strategy = "multinomial"  # multinomial or beamsearch (deterministic)
 #distance_threshold = 100
 
-batch_size = 64          # network
+batch_size = 8          # network
 
 unique_sequences = true  # if true remove all duplicates raw sequences in each step
                          # only here for backward compatibility
