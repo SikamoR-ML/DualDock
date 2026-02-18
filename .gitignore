@@ -1,25 +1,3 @@
-results/
-__pycache__/
-*.pyc
-.DS_Store
-.env
-.venv
-
-# REINVENT / RL artifacts (store locally under runs/)
-runs/**
-
-# common junk
-*.log
-*.chkpt
-tb_logs*/
-configs/tb_logs_*/
-*_learning*.csv
-*_learning*.json
-# runs and logs
-runs/
-**/logs/
-*.log
-
 # python
 __pycache__/
 *.pyc
@@ -28,10 +6,13 @@ __pycache__/
 .conda/
 *.egg-info/
 
-# misc
+# mac
 .DS_Store
+
+# local freeze files
 requirements-freeze*.txt
-# outputs / runs
+
+# outputs / runs (generated artifacts)
 runs/
 tb_logs*/
 _staged_learning.json
