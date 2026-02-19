@@ -35,3 +35,5 @@ venv/
 # OS/editor junk
 .DS_Store
 .ipynb_checkpoints/
+_archive/
+_staged_learning.json
