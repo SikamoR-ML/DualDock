@@ -13,6 +13,7 @@ tb_logs_*/
 
 # Logs and reports
 *.log
+/logs
 *_learning_*.csv
 staged_learning_*.csv
 
