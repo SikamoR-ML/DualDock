@@ -1,0 +1,29 @@
+{
+    "run_type": "sampling",
+    "device": "cuda:0",
+    "use_cuda": true,
+    "tb_logdir": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/tb_logs_sampling",
+    "json_out_config": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/configs/sampling_rendered.json",
+    "seed": null,
+    "parameters": {
+        "model_file": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/checkpoints/single_b1_agent_stage01.chkpt",
+        "num_smiles": 1500,
+        "smiles_file": null,
+        "target_smiles_path": "",
+        "sample_strategy": "multinomial",
+        "output_file": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/results/post_sampling/sampled_smiles.csv",
+        "target_nll_file": "target_nll.csv",
+        "unique_molecules": true,
+        "randomize_smiles": false,
+        "temperature": 1.0
+    },
+    "scoring": null,
+    "scheduler": null,
+    "responder": null,
+    "filter": null,
+    "stage": null,
+    "learning_strategy": null,
+    "diversity_filter": null,
+    "intrinsic_penalty": null,
+    "inception": null
+}

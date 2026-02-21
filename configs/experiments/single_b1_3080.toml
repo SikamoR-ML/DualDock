@@ -1,0 +1,110 @@
+[experiment]
+name = "single_b1_3080"
+description = "Sample single-target run for beta-1 receptor on RTX 3080"
+
+[hardware]
+profile = "RTX_3080"
+
+[docking]
+mode = "single"
+
+[executables]
+reinvent4_bin = ""
+reinvent4_root = ""
+boltz_bin = ""
+boltz_root = ""
+python_bin = ""
+
+[paths]
+prior_file = "priors/reinvent.prior"
+agent_file = "priors/reinvent.prior"
+target_a_name = "b1"
+target_b_name = "b2"
+target_a_template = "assets/targets/adrenoreceptors/b1.yaml"
+target_b_template = "assets/targets/adrenoreceptors/b2.yaml"
+
+[rl]
+device = "cuda:0"
+batch_size = 4
+learning_rate = 0.0001
+reward_strategy = "dap"
+sigma = 96
+max_steps = 9
+min_steps = 1
+max_score = 1.0
+checkpoint_prefix = "single_b1_3080_agent"
+checkpoint_every_steps = 3
+use_checkpoint = false
+purge_memories = false
+summary_csv_prefix = "single_b1_3080"
+randomize_smiles = true
+unique_sequences = true
+tb_isim = false
+
+[optimizer]
+name = "adam"
+
+[scoring]
+aggregation = "geometric_mean"
+qed_weight = 0.2
+external_weight = 0.8
+external_property = "target_score"
+
+[selectivity]
+mode = "weighted_sum"
+weight_a = 1.0
+weight_b = 0.0
+reward_shift = 0.0
+reward_clip_min = 0.0
+reward_clip_max = 1.0
+
+[selectivity.penalty]
+off_target_threshold = 2.0
+off_target_penalty = 0.0
+
+[selectivity.normalization.target_a]
+method = "sigmoid"
+midpoint = 0.50
+slope = 8.0
+clip_min = 0.0
+clip_max = 1.0
+invert = false
+
+[selectivity.normalization.target_b]
+method = "sigmoid"
+midpoint = 0.50
+slope = 8.0
+clip_min = 0.0
+clip_max = 1.0
+invert = false
+
+[fallback]
+score = 0.05
+invalid_smiles_score = 0.0
+
+[validation]
+require_rdkit = true
+
+[boltz]
+model = "boltz2"
+score_mode = "prob"
+accelerator = "gpu"
+devices = "1"
+num_workers = 0
+recycling_steps = 1
+sampling_steps = 2
+diffusion_samples = 1
+sampling_steps_affinity = 2
+diffusion_samples_affinity = 1
+timeout_sec = 600
+keep_tmp = false
+
+[output]
+root = "runs"
+rank_by = "best_total_reward"
+plots = false
+
+[postprocess]
+enabled = false
+num_smiles = 200
+score_batch_size = 64

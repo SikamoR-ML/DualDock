@@ -1,0 +1,318 @@
+03:13:03 <INFO> Started REINVENT 4.7.15 (C) AstraZeneca 2017, 2023 on 2026-02-21
+03:13:03 <INFO> Command line: /nfs/home/apodshibiakin/projects/PotatoDualDock/REINVENT4/reinvent/Reinvent.py -l /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/logs/reinvent.log /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/configs/staged_learning.toml
+03:13:03 <INFO> Reading run configuration from /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/configs/staged_learning.toml using format toml
+03:13:03 <INFO> User apodshibiakin on host aichem
+03:13:03 <INFO> Python version 3.12.12
+03:13:03 <INFO> PyTorch version 2.9.1+cu128, git 5811a8d7da873dd699ff6687092c225caffcf1bb
+03:13:03 <INFO> PyTorch compiled with CUDA version 12.8
+03:13:03 <INFO> RDKit version 2025.09.5
+03:13:03 <INFO> Platform Linux-5.15.0-170-generic-x86_64-with-glibc2.35
+03:13:03 <INFO> CUDA driver version 550.144.03
+03:13:03 <INFO> Number of PyTorch CUDA devices 1
+03:13:03 <WARN> 'use_cuda' is deprecated, use 'device' instead
+03:13:03 <INFO> Using GPU device:0 NVIDIA RTX A6000
+03:13:03 <INFO> GPU memory: 48402 MiB free, 48669 MiB total
+03:13:03 <INFO> Writing TensorBoard summary to /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/tb_logs
+03:13:03 <INFO> Writing JSON config file to /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/configs/staged_learning_rendered.json
+03:13:03 <INFO> Starting 2 stages of Reinforcement Learning
+03:13:03 <INFO> /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/priors/reinvent.prior has valid hash:
+{ 'comments': [],
+  'creation_date': 0,
+  'date_format': 'UNIX epoch',
+  'hash_id': '173568c36e1fc3d95cab289c7d31ce0b',
+  'hash_id_format': 'xxhash.xxh3_128_hex 3.4.1',
+  'model_id': '55d68f8a81c04f5a86304ebe1723a0ea',
+  'model_id_format': 'uuid.uuid4 3.10.12',
+  'origina_data_source': 'ChEMBL 25',
+  'updates': []}
+03:13:03 <INFO> Number of network parameters: 5,805,602
+03:13:03 <INFO> Network architecture:
+RNN(
+  (_embedding): Embedding(34, 256)
+  (_rnn): LSTM(256, 512, num_layers=3, batch_first=True)
+  (_linear): Linear(in_features=512, out_features=34, bias=True)
+)
+03:13:03 <INFO> /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/priors/reinvent.prior has valid hash:
+{ 'comments': [],
+  'creation_date': 0,
+  'date_format': 'UNIX epoch',
+  'hash_id': '173568c36e1fc3d95cab289c7d31ce0b',
+  'hash_id_format': 'xxhash.xxh3_128_hex 3.4.1',
+  'model_id': '55d68f8a81c04f5a86304ebe1723a0ea',
+  'model_id_format': 'uuid.uuid4 3.10.12',
+  'origina_data_source': 'ChEMBL 25',
+  'updates': []}
+03:13:03 <INFO> Number of network parameters: 5,805,602
+03:13:03 <INFO> Network architecture:
+RNN(
+  (_embedding): Embedding(34, 256)
+  (_rnn): LSTM(256, 512, num_layers=3, batch_first=True)
+  (_linear): Linear(in_features=512, out_features=34, bias=True)
+)
+03:13:03 <INFO> Using generator Reinvent
+03:13:03 <INFO> Prior read from /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/priors/reinvent.prior
+03:13:03 <INFO> Agent read from /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/priors/reinvent.prior
+03:13:03 <INFO> Using reward strategy dap
+03:13:03 <INFO> Diversity filter memories are retained between stages
+03:13:03 <WARN> Inception disabled but may speed up convergence
+03:13:03 <INFO> Reading score components from /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/configs/stage_scoring.toml
+03:13:03 <ERRO> Component reinvent_plugins.components.OpenEye.comp_rocs could not be imported: No module named 'openeye'
+03:13:03 <INFO> Registered scoring component GroupCount
+03:13:03 <INFO> Registered scoring component FragmentQed
+03:13:03 <INFO> Registered scoring component FragmentSlogP
+03:13:03 <INFO> Registered scoring component FragmentMolecularWeight
+03:13:03 <INFO> Registered scoring component FragmentTPSA
+03:13:03 <INFO> Registered scoring component FragmentDistanceMatrix
+03:13:03 <INFO> Registered scoring component FragmentNumAtomStereoCenters
+03:13:03 <INFO> Registered scoring component FragmentHBondAcceptors
+03:13:03 <INFO> Registered scoring component FragmentHBondDonors
+03:13:03 <INFO> Registered scoring component FragmentNumRotBond
+03:13:03 <INFO> Registered scoring component FragmentCsp3
+03:13:03 <INFO> Registered scoring component Fragmentnumsp
+03:13:03 <INFO> Registered scoring component Fragmentnumsp2
+03:13:03 <INFO> Registered scoring component Fragmentnumsp3
+03:13:03 <INFO> Registered scoring component FragmentEffectiveLength
+03:13:03 <INFO> Registered scoring component FragmentGraphLength
+03:13:03 <INFO> Registered scoring component FragmentLengthRatio
+03:13:03 <INFO> Registered scoring component FragmentNumHeavyAtoms
+03:13:03 <INFO> Registered scoring component FragmentNumHeteroAtoms
+03:13:03 <INFO> Registered scoring component FragmentNumRings
+03:13:03 <INFO> Registered scoring component FragmentNumAromaticRings
+03:13:03 <INFO> Registered scoring component FragmentNumAliphaticRings
+03:13:03 <INFO> Registered scoring component FragmentSlogP
+03:13:03 <INFO> Registered scoring component MatchingSubstructure
+03:13:03 <INFO> Registered scoring component MolVolume
+03:13:03 <INFO> Registered scoring component Qed
+03:13:03 <INFO> Registered scoring component LargestRingSize
+03:13:03 <INFO> Registered scoring component MolecularWeight
+03:13:03 <INFO> Registered scoring component GraphLength
+03:13:03 <INFO> Registered scoring component NumAtomStereoCenters
+03:13:03 <INFO> Registered scoring component HBondAcceptors
+03:13:03 <INFO> Registered scoring component HBondDonors
+03:13:03 <INFO> Registered scoring component NumRotBond
+03:13:03 <INFO> Registered scoring component Csp3
+03:13:03 <INFO> Registered scoring component numsp
+03:13:03 <INFO> Registered scoring component numsp2
+03:13:03 <INFO> Registered scoring component numsp3
+03:13:03 <INFO> Registered scoring component NumHeavyAtoms
+03:13:03 <INFO> Registered scoring component NumHeteroAtoms
+03:13:03 <INFO> Registered scoring component NumRings
+03:13:03 <INFO> Registered scoring component NumAromaticRings
+03:13:03 <INFO> Registered scoring component NumAliphaticRings
+03:13:03 <INFO> Registered scoring component SlogP
+03:13:03 <INFO> Registered scoring component LargestRingSize
+03:13:03 <INFO> Registered scoring component PMI
+03:13:03 <INFO> Registered scoring component RDKitDescriptors
+03:13:03 <INFO> Registered scoring component TanimotoSimilarity
+03:13:03 <INFO> Registered scoring component TanimotoDistance
+03:13:03 <INFO> Registered scoring component TPSA
+03:13:03 <INFO> Registered scoring component SAScore
+03:13:04 <ERRO> Component reinvent_plugins.components.comp_chemprop could not be imported: No module named 'pkg_resources'
+03:13:04 <INFO> Registered scoring component CustomAlerts
+03:13:04 <INFO> Registered scoring component DockStream
+03:13:04 <INFO> Registered scoring component ExternalProcess
+03:13:04 <INFO> Registered scoring component REST
+03:13:04 <INFO> Registered scoring component Icolos
+03:13:04 <INFO> Registered scoring component MMP
+03:13:04 <INFO> Registered scoring component Qptuna
+03:13:04 <INFO> Registered scoring component ReactionFilter
+03:13:04 <INFO> Registered scoring component RingPrecedence
+03:13:04 <INFO> Registered scoring component Maize
+03:13:04 <INFO> Registered scoring component SynthSense
+03:13:04 <INFO> Registered scoring component CAZP
+03:13:04 <INFO> Creating scoring component QED
+03:13:04 <INFO> Creating scoring component ExternalProcess
+03:13:04 <INFO> Reading score components from /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/configs/stage_scoring.toml
+03:13:04 <ERRO> Component reinvent_plugins.components.OpenEye.comp_rocs could not be imported: No module named 'openeye'
+03:13:04 <INFO> Registered scoring component GroupCount
+03:13:04 <INFO> Registered scoring component FragmentQed
+03:13:04 <INFO> Registered scoring component FragmentSlogP
+03:13:04 <INFO> Registered scoring component FragmentMolecularWeight
+03:13:04 <INFO> Registered scoring component FragmentTPSA
+03:13:04 <INFO> Registered scoring component FragmentDistanceMatrix
+03:13:04 <INFO> Registered scoring component FragmentNumAtomStereoCenters
+03:13:04 <INFO> Registered scoring component FragmentHBondAcceptors
+03:13:04 <INFO> Registered scoring component FragmentHBondDonors
+03:13:04 <INFO> Registered scoring component FragmentNumRotBond
+03:13:04 <INFO> Registered scoring component FragmentCsp3
+03:13:04 <INFO> Registered scoring component Fragmentnumsp
+03:13:04 <INFO> Registered scoring component Fragmentnumsp2
+03:13:04 <INFO> Registered scoring component Fragmentnumsp3
+03:13:04 <INFO> Registered scoring component FragmentEffectiveLength
+03:13:04 <INFO> Registered scoring component FragmentGraphLength
+03:13:04 <INFO> Registered scoring component FragmentLengthRatio
+03:13:04 <INFO> Registered scoring component FragmentNumHeavyAtoms
+03:13:04 <INFO> Registered scoring component FragmentNumHeteroAtoms
+03:13:04 <INFO> Registered scoring component FragmentNumRings
+03:13:04 <INFO> Registered scoring component FragmentNumAromaticRings
+03:13:04 <INFO> Registered scoring component FragmentNumAliphaticRings
+03:13:04 <INFO> Registered scoring component FragmentSlogP
+03:13:04 <INFO> Registered scoring component MatchingSubstructure
+03:13:04 <INFO> Registered scoring component MolVolume
+03:13:04 <INFO> Registered scoring component Qed
+03:13:04 <INFO> Registered scoring component LargestRingSize
+03:13:04 <INFO> Registered scoring component MolecularWeight
+03:13:04 <INFO> Registered scoring component GraphLength
+03:13:04 <INFO> Registered scoring component NumAtomStereoCenters
+03:13:04 <INFO> Registered scoring component HBondAcceptors
+03:13:04 <INFO> Registered scoring component HBondDonors
+03:13:04 <INFO> Registered scoring component NumRotBond
+03:13:04 <INFO> Registered scoring component Csp3
+03:13:04 <INFO> Registered scoring component numsp
+03:13:04 <INFO> Registered scoring component numsp2
+03:13:04 <INFO> Registered scoring component numsp3
+03:13:04 <INFO> Registered scoring component NumHeavyAtoms
+03:13:04 <INFO> Registered scoring component NumHeteroAtoms
+03:13:04 <INFO> Registered scoring component NumRings
+03:13:04 <INFO> Registered scoring component NumAromaticRings
+03:13:04 <INFO> Registered scoring component NumAliphaticRings
+03:13:04 <INFO> Registered scoring component SlogP
+03:13:04 <INFO> Registered scoring component LargestRingSize
+03:13:04 <INFO> Registered scoring component PMI
+03:13:04 <INFO> Registered scoring component RDKitDescriptors
+03:13:04 <INFO> Registered scoring component TanimotoSimilarity
+03:13:04 <INFO> Registered scoring component TanimotoDistance
+03:13:04 <INFO> Registered scoring component TPSA
+03:13:04 <INFO> Registered scoring component SAScore
+03:13:04 <ERRO> Component reinvent_plugins.components.comp_chemprop could not be imported: No module named 'pkg_resources'
+03:13:04 <INFO> Registered scoring component CustomAlerts
+03:13:04 <INFO> Registered scoring component DockStream
+03:13:04 <INFO> Registered scoring component ExternalProcess
+03:13:04 <INFO> Registered scoring component REST
+03:13:04 <INFO> Registered scoring component Icolos
+03:13:04 <INFO> Registered scoring component MMP
+03:13:04 <INFO> Registered scoring component Qptuna
+03:13:04 <INFO> Registered scoring component ReactionFilter
+03:13:04 <INFO> Registered scoring component RingPrecedence
+03:13:04 <INFO> Registered scoring component Maize
+03:13:04 <INFO> Registered scoring component SynthSense
+03:13:04 <INFO> Registered scoring component CAZP
+03:13:04 <INFO> Creating scoring component QED
+03:13:04 <INFO> Creating scoring component ExternalProcess
+03:13:04 <INFO> Writing tabular data for stage to /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/results/dual_b1_vs_b2_staged_learning_1.csv
+03:13:04 <INFO> Starting stage 1 <<<
+03:13:04 <INFO> Current GPU memory usage: 405 MiB used, 48264 MiB free
+03:21:00 <INFO> Score: 0.01 Agent NLL: 27.42 Valid: 100% Step: 1
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 22.3536 22.3536 -22.3535 0.0000003 CCOC(=O)C1C(C)C1(Cl)Cl 1 0.4993763 0.4994 0.0000000 0.0000 0.16037623584270477 ok 0.061978221284179756 0.17518730709950128 ok 0.0 CCOC(=O)C1C(C)C1(Cl)Cl 0.0692349207593885 0.0 0.0
+ | 31.1764 31.1764 -22.8463 0.0650790 COc1ccc(S(=O)(=O)N2Cc3ccccc3CC2CC(=O)NCCC(=O)O)cc1 1 0.6576398 0.6576 0.0365009 0.0365 0.2904188583294551 ok 0.15753968886406147 0.20222130914529166 ok 0.03650091440829133 COc1ccc(S(=O)(=O)N2Cc3ccccc3CC2CC(=O)NCCC(=O)O)cc1 0.08453786004747882 0.0 0.03650091440829133
+ | 32.8216 32.8216 -32.8216 0.0000003 C=C(C)C1CC2=C(CCCC2(C)C)C2=CC(C)CCC21 1 0.5078347 0.5078 0.0000000 0.0000 0.29076290875673294 ok 0.15790533484305816 0.31154154737790424 ok 0.0 C=C(C)C1CC2=C(CCCC2(C)C)C2=CC(C)CCC21 0.18128470886195625 0.0 0.0
+ | 25.5375 25.5375 -23.4879 0.0160122 CSc1ccc2[nH]c(-c3ccc(-n4ccnc4)cc3)nc2c1 1 0.5786893 0.5787 0.0065306 0.0065 0.3090516924858093 ok 0.17834708995923707 0.29757347454627353 ok 0.006530569756060783 CSc1ccc2[nH]c(-c3ccc(-n4ccnc4)cc3)nc2c1 0.1652859504471155 0.0 0.006530569756060783
+ | 32.2503 32.2503 -32.2502 0.0000004 CCN1C(=O)C(C)(C(=O)N=c2cc(C)[nH][nH]2)S(=O)(=O)c2ccccc21 1 0.7642615 0.7643 0.0000000 0.0000 0.23539437353610992 ok 0.10747032382415045 0.32222039500872296 ok 0.0 CCN1C(=O)C(C)(C(=O)N=c2cc(C)[nH][nH]2)S(=O)(=O)c2ccccc21 0.19431115714452135 0.0 0.0
+ | 19.8483 19.8483 -19.8482 0.0000004 CNCc1ccccc1Oc1cc(Cl)ccc1Cl 1 0.8907036 0.8907 0.0000000 0.0000 0.2148150751988093 ok 0.09266848878015323 0.2214027593533198 ok 0.0 CNCc1ccccc1Oc1cc(Cl)ccc1Cl 0.0971958238058962 0.0 0.0
+ | 26.5138 26.5138 -26.5138 0.0000004 Cc1ccc(NC(O)c2cc3ccccc3o2)c(C)c1 1 0.7005420 0.7005 0.0000000 0.0000 0.22987854480743408 ok 0.10331040644501052 0.3160744806130727 ok 0.0 Cc1ccc(NC(O)c2cc3ccccc3o2)c(C)c1 0.18672928312300727 0.0 0.0
+ | 28.8230 28.8230 -28.8229 0.0000004 Cc1cc(C#N)ccc1-n1nc(C(=O)NC(C)(C)C)cc1C 1 0.9259347 0.9259 0.0000000 0.0000 0.15975730121135712 ok 0.06169098122105353 0.16985844324032465 ok 0.0 Cc1cc(C#N)ccc1-n1nc(C(=O)NC(C)(C)C)cc1C 0.06653766385951805 0.0 0.0
+03:29:09 <INFO> Score: 0.03 Agent NLL: 29.88 Valid: 100% Step: 2
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 34.4081 34.4064 -22.5038 0.0929889 Cn1nnc2cc(C(=O)Nc3scnc3C(=O)NCCC(=O)O)ccc21 1 0.5818239 0.5818 0.0587951 0.0588 0.3306075930595398 ok 0.20503143640535698 0.2068394273519516 ok 0.058795063419945996 Cn1nnc2cc(C(=O)Nc3scnc3C(=O)NCCC(=O)O)ccc21 0.08744130956546499 0.0 0.058795063419945996
+ | 23.0727 23.0965 -23.0964 0.0000003 CC(=O)NS(=O)(=O)OCC1OC(n2cnc3c(=N)[nH]cnc32)C(O)C1O 1 0.3610245 0.3610 0.0000000 0.0000 0.19094554086526236 ok 0.0778132753743729 0.3208334942658742 ok 0.0 CC(=O)NS(=O)(=O)OCC1OC(n2cnc3c(=N)[nH]cnc32)C(O)C1O 0.19258004373960294 0.0 0.0
+ | 30.1810 30.1800 -30.1800 0.0000004 CCN1C2=NCCN2C(=O)C(C)=C1c1cc(C(F)(F)F)cc(C(F)(F)F)c1 1 0.7151881 0.7152 0.0000000 0.0000 0.18073977530002594 ok 0.0721527446987155 0.2419679214557012 ok 0.0 CCN1C2=NCCN2C(=O)C(C)=C1c1cc(C(F)(F)F)cc(C(F)(F)F)c1 0.11261973544367092 0.0 0.0
+ | 35.0655 35.2059 -34.1250 0.0084446 COc1ccccc1CCN1CCN(C2CCCc3cc(N4CCOCC4)ccc32)CC1 1 0.6888510 0.6889 0.0028099 0.0028 0.27239957948525745 ok 0.13933750355986668 0.26644000907739 ok 0.0028098989824022064 COc1ccccc1CCN1CCN(C2CCCc3cc(N4CCOCC4)ccc32)CC1 0.13371770559506227 0.0 0.0028098989824022064
+ | 23.1337 23.1153 -23.1152 0.0000003 COc1cc(C=NO)ccc1OCc1ccc2ccccc2c1 1 0.4356799 0.4357 0.0000000 0.0000 0.4123541017373403 ok 0.33155349846726245 0.5168672601381937 ok 0.0 COc1cc(C=NO)ccc1OCc1ccc2ccccc2c1 0.5336834259929492 0.0 0.0
+ | 28.6065 28.5842 -23.6730 0.0383686 CN(N)c1nc(O)c(Cc2ccc3c(c2)OCO3)s1 1 0.6540324 0.6540 0.0188830 0.0189 0.23879829545815787 ok 0.11011042693673558 0.18109737088282904 ok 0.018882964419974266 CN(N)c1nc(O)c(Cc2ccc3c(c2)OCO3)s1 0.07234449809678704 0.0 0.018882964419974266
+ | 43.8377 43.8594 -29.5227 0.1120054 COc1cccc(C(C)C(=O)Nc2cc(C(=O)Nc3ccc4c(C)n(C)nc4c3)ccc2C)c1 1 0.4179634 0.4180 0.0805869 0.0806 0.3750238319238027 ok 0.2689789081461638 0.23583012570937475 ok 0.08058687305607995 COc1cccc(C(C)C(=O)Nc2cc(C(=O)Nc3ccc4c(C)n(C)nc4c3)ccc2C)c1 0.1078051620340039 0.0 0.08058687305607995
+ | 20.7741 20.7872 -19.7414 0.0081701 CCOC(=O)c1ccc(-n2c(O)c(O)c(C(C)=O)c2-c2ccccc2)cc1 1 0.5281209 0.5281 0.0028814 0.0029 0.1782238520681858 ok 0.07081683135603731 0.1668411816159884 ok 0.0028813994899593645 CCOC(=O)c1ccc(-n2c(O)c(O)c(C(C)=O)c2-c2ccccc2)cc1 0.06505403237611858 0.0 0.0028813994899593645
+03:35:49 <INFO> Score: 0.02 Agent NLL: 26.61 Valid: 100% Step: 3
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 24.5823 24.5261 -24.5260 0.0000003 CC[N+]1=C2C=CCN2CCC1 1 0.4997793 0.4998 0.0000000 0.0000 0.19528737664222717 ok 0.08034261711642433 0.23663070301214853 ok 0.0 CC[N+]1=C2C=CCN2CCC1 0.10842272791370794 0.0 0.0
+ | 24.0306 24.0741 -24.0741 0.0000004 CC1(C)C(=O)NC(=O)c2ocnc21 1 0.5795604 0.5796 0.0000000 0.0000 0.24104532102743784 ok 0.11188422983609608 0.2663690547148387 ok 0.0 CC1(C)C(=O)NC(=O)c2ocnc21 0.13365196598169987 0.0 0.0
+ | 31.4062 31.4302 -31.4302 0.0000003 O=C(O)CC(NC(=O)Cc1ccc2onc(-c3ccccc3)c2c1)c1ccccc1 1 0.4805588 0.4806 0.0000000 0.0000 0.09813016032179196 ok 0.03860666408890053 0.1273861856510242 ok 0.0 O=C(O)CC(NC(=O)Cc1ccc2onc(-c3ccccc3)c2c1)c1ccccc1 0.048295761256447044 0.0 0.0
+ | 30.2655 30.2554 -21.0581 0.0718534 COc1cccc2oc(-c3csc(=Nc4ccc(CCN5CCc6ccccc6C5)cc4)[nH]3)cc12 1 0.3082635 0.3083 0.0499263 0.0499 0.38954856991767883 ok 0.2924299590520027 0.32083140810330707 ok 0.04992625518400069 COc1cccc2oc(-c3csc(=Nc4ccc(CCN5CCc6ccccc6C5)cc4)[nH]3)cc12 0.1925774486840013 0.0 0.04992625518400069
+ | 23.6746 23.6420 -23.6419 0.0000004 Cc1nn(-c2ccccc2)c(-c2ccc(F)cc2)c1C(=O)N1CCOCC1 1 0.7141630 0.7142 0.0000000 0.0000 0.15600076566139856 ok 0.059974142339668045 0.19750529527664185 ok 0.0 Cc1nn(-c2ccccc2)c(-c2ccc(F)cc2)c1C(=O)N1CCOCC1 0.08166343233897203 0.0 0.0
+ | 23.4262 23.3674 -13.0464 0.0806329 COc1ccc2c(=NCCCN3CCCCC3C)cc(-c3ccccc3)[nH]c2c1 1 0.6022471 0.6022 0.0487750 0.0488 0.38799363374710083 ok 0.2898627080290167 0.32061852018038434 ok 0.048774969294523116 COc1ccc2c(=NCCCN3CCCCC3C)cc(-c3ccccc3)[nH]c2c1 0.19231276943997047 0.0 0.048774969294523116
+ | 31.1562 31.0312 -28.4637 0.0200587 CCN1C(=O)COc2c1ccc1c2OCC(CN2CCN(c3ccccc3OC)CC2)O1 1 0.7089770 0.7090 0.0082266 0.0082 0.20065134267012277 ok 0.08357090557231898 0.17102111876010895 ok 0.00822659664427583 CCN1C(=O)COc2c1ccc1c2OCC(CN2CCN(c3ccccc3OC)CC2)O1 0.06711771228376733 0.0 0.00822659664427583
+ | 24.3503 24.4291 -24.4290 0.0000003 CCCCN(CCCC)c1c(C)nc(-c2cccc3ccccc23)nc1C 1 0.4698899 0.4699 0.0000000 0.0000 0.3399708867073059 ok 0.2175105803728636 0.35462624828020733 ok 0.0 CCCCN(CCCC)c1c(C)nc(-c2cccc3ccccc23)nc1C 0.23812440867463447 0.0 0.0
+03:44:02 <INFO> Score: 0.01 Agent NLL: 29.76 Valid: 100% Step: 4
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 36.1171 36.1516 -26.8917 0.0723432 Cc1nnc(C)c2nn(-c3ccccc3OCC(=O)N3CCC(N(C)C)C3)nc12 1 0.6444702 0.6445 0.0418742 0.0419 0.3001287331183751 ok 0.16812560191760337 0.20196170111497244 ok 0.041874167140584374 Cc1nnc(C)c2nn(-c3ccccc3OCC(=O)N3CCC(N(C)C)C3)nc12 0.08437726763643462 0.0 0.041874167140584374
+ | 25.9521 25.9302 -25.9302 0.0000004 NS(=O)(=O)Oc1ccc(COC(=O)C23CC4CC(CC(C4)C2)C3)cc1 1 0.8090707 0.8091 0.0000000 0.0000 0.11218606680631638 ok 0.04300377824047052 0.21482270459334055 ok 0.0 NS(=O)(=O)Oc1ccc(COC(=O)C23CC4CC(CC(C4)C2)C3)cc1 0.09267362080715381 0.0 0.0
+ | 44.5666 44.6496 -44.6496 0.0000003 COC(=O)CC1C(C)=CC2C3(C)CCCC(C)(C(=O)OC)C3CCC23C(OC(C)=O)C(=O)OCC13C 1 0.3213666 0.3214 0.0000000 0.0000 0.24140415092309317 ok 0.11216979215536871 0.27725735306739807 ok 0.0 COC(=O)CC1C(C)=CC2C3(C)CCCC(C)(C(=O)OC)C3CCC23C(OC(C)=O)C(=O)OCC13C 0.14406360371389548 0.0 0.0
+ | 23.8377 23.9171 -22.6446 0.0099417 COc1ccc(C2CC(c3ccccc3)n3nc(N4CCOCC4)nc3N2)cc1 1 0.7364804 0.7365 0.0033887 0.0034 0.2650451163450877 ok 0.13243033629356768 0.2575057049592336 ok 0.0033887328482060525 COc1ccc(C2CC(c3ccccc3)n3nc(N4CCOCC4)nc3N2)cc1 0.12565287059715557 0.0 0.0033887328482060525
+ | 27.3669 27.3197 -27.3196 0.0000004 CCOc1ccccc1C(=O)N1CC(S(=O)(=O)c2ccccc2Cl)CC1C(=O)NC1(C#N)CC1 1 0.6230369 0.6230 0.0000000 0.0000 0.24307645857334137 ok 0.1135090516037054 0.2893241693576177 ok 0.0 CCOc1ccccc1C(=O)N1CC(S(=O)(=O)c2ccccc2Cl)CC1C(=O)NC1(C#N)CC1 0.15638086654093938 0.0 0.0
+ | 18.1109 18.0053 -18.0052 0.0000004 Cc1cc(-c2nc(-c3cccc(C(F)(F)F)c3)n3c2CCOC(C)C3)cc(C)n1 1 0.5919279 0.5919 0.0000000 0.0000 0.14140006403128305 ok 0.05371764383143592 0.37929192185401917 ok 0.0 Cc1cc(-c2nc(-c3cccc(C(F)(F)F)c3)n3c2CCOC(C)C3)cc(C)n1 0.27574547721622067 0.0 0.0
+ | 39.4123 39.5105 -39.5105 0.0000004 CCc1cc(NC(=O)NCCC(C)C)ccc1C1CN(C(=O)c2ccco2)C1 1 0.7505263 0.7505 0.0000000 0.0000 0.17589650054772696 ok 0.0696014271186617 0.3568904399871826 ok 0.0 CCc1cc(NC(=O)NCCC(C)C)ccc1C1CN(C(=O)c2ccco2)C1 0.24142615877929374 0.0 0.0
+ | 22.7144 22.8184 -22.8184 0.0000003 O=[N+]([O-])c1cccc(-c2nc(CNCCCN3CCOCC3)co2)c1 1 0.4440567 0.4441 0.0000000 0.0000 0.21572626133759817 ok 0.0932832191645171 0.2787397503852844 ok 0.0 O=[N+]([O-])c1cccc(-c2nc(CNCCCN3CCOCC3)co2)c1 0.14553213211637406 0.0 0.0
+03:51:53 <INFO> Score: 0.01 Agent NLL: 30.13 Valid: 100% Step: 5
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 37.5359 37.6857 -24.4303 0.1035582 Cc1nc2c3sc(NCCC4CCN(C(=O)OC(C)(C)C)CC4)cc3c(=O)n(C)c2s1 1 0.5925349 0.5925 0.0669579 0.0670 0.3443937997023265 ok 0.22359297048058516 0.21030199031035104 ok 0.06695794123323585 Cc1nc2c3sc(NCCC4CCN(C(=O)OC(C)(C)C)CC4)cc3c(=O)n(C)c2s1 0.08967708801411345 0.0 0.06695794123323585
+ | 34.9444 34.9401 -34.9400 0.0000004 CCOc1nc2c(c(N3CCOCC3)n1)SS(=O)(=O)N=C2NC1CCCCC1 1 0.7190325 0.7190 0.0000000 0.0000 0.2777271866798401 ok 0.14452770282366445 0.36853020389874774 ok 0.0 CCOc1nc2c(c(N3CCOCC3)n1)SS(=O)(=O)N=C2NC1CCCCC1 0.258887588722569 0.0 0.0
+ | 24.3906 24.4730 -24.4729 0.0000004 Cc1csc2ncnc(N3CCC(N4CCN(C)CC4)CC3)c12 1 0.8430762 0.8431 0.0000000 0.0000 0.14162209878365198 ok 0.05380800730905234 0.2715325703223546 ok 0.0 Cc1csc2ncnc(N3CCC(N4CCN(C)CC4)CC3)c12 0.13850779078812334 0.0 0.0
+ | 27.9019 27.6411 -27.6411 0.0000004 COc1ccc(C(=O)N2Cc3cc(Cl)ccc3Sc3ccccc32)cc1 1 0.5731895 0.5732 0.0000000 0.0000 0.2593209197123845 ok 0.12725697992950932 0.31598860025405884 ok 0.0 COc1ccc(C(=O)N2Cc3cc(Cl)ccc3Sc3ccccc32)cc1 0.18662497024618296 0.0 0.0
+ | 27.5781 27.3835 -27.3834 0.0000004 CC(=O)c1cccc(N(C(=O)CCl)C(C(=O)NC2CCCC2)c2ccncc2)c1 1 0.5545933 0.5546 0.0000000 0.0000 0.17690847938259444 ok 0.07012751964140272 0.1977911926805973 ok 0.0 CC(=O)c1cccc(N(C(=O)CCl)C(C(=O)NC2CCCC2)c2ccncc2)c1 0.08183512243889586 0.0 0.0
+ | 32.3071 32.1738 -31.9129 0.0020383 NC(=O)C1(c2ccc(NCc3cccs3)cc2F)CCOCC1 1 0.8832412 0.8832 0.0004468 0.0004 0.11566559163232644 ok 0.04416404667553196 0.11299389600753784 ok 0.0004467576910883765 NC(=O)C1(c2ccc(NCc3cccs3)cc2F)CCOCC1 0.04327053129335521 0.0 0.0004467576910883765
+ | 29.7872 29.8900 -29.8899 0.0000003 O=C(Nc1cnn(Cc2ccccc2)c1)c1ccnc2ccc(-c3cncnc3)cc12 1 0.4730237 0.4730 0.0000000 0.0000 0.1252257525920868 ok 0.04750752988244239 0.24419112503528595 ok 0.0 O=C(Nc1cnn(Cc2ccccc2)c1)c1ccnc2ccc(-c3cncnc3)cc12 0.11440945308609043 0.0 0.0
+ | 26.5773 26.4440 -26.4440 0.0000004 COc1cc2c(cc1OC)C(=O)C(CC1CCN(C(=O)Nc3cccc4ncccc34)CC1)C2 1 0.5844790 0.5845 0.0000000 0.0000 0.29337450861930847 ok 0.16070337290093073 0.31415316462516785 ok 0.0 COc1cc2c(cc1OC)C(=O)C(CC1CCN(C(=O)Nc3cccc4ncccc34)CC1)C2 0.18440632344734087 0.0 0.0
+03:51:54 <INFO> Sampled SMILES c12[nH]c(O)c(O)c(=O)c1cc(-c1c3c(cc[nH]1)cc(C(=O)N(CCC(C)C)CCC(C)C)cc3)cc2 failed to sanitize.
+03:59:59 <INFO> Score: 0.01 Agent NLL: 31.28 Valid:  88% Step: 6
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 26.0449 26.1638 -24.3770 0.0139594 CC(=O)C(NC(=O)CNC(=O)C(N)CS)C(O)O 1 0.2133582 0.2134 0.0070600 0.0071 0.1001271978020668 ok 0.03920403418547197 0.04248493645961086 ok 0.007060009604231742 CC(=O)C(NC(=O)CNC(=O)C(N)CS)C(O)O 0.025084014977008486 0.0 0.007060009604231742
+ | 37.9172 37.9189 -37.9189 0.0000003 N#Cc1cc(-c2cccc(OC(=O)NC3CCCC3)c2)ccc1OCCCCCCCC(=O)O 1 0.3696141 0.3696 0.0000000 0.0000 0.284574235479037 ok 0.15143295442822138 0.434208482503891 ok 0.0 N#Cc1cc(-c2cccc(OC(=O)NC3CCCC3)c2)ccc1OCCCCCCCC(=O)O 0.371372763670888 0.0 0.0
+ | 27.6215 27.7645 -23.6640 0.0320353 Cc1nc(C(CN)c2ccccc2)cs1 1 0.8595062 0.8595 0.0140758 0.0141 0.16950388252735138 ok 0.06636170504997523 0.09678803322215875 ok 0.014075794902086537 Cc1nc(C(CN)c2ccccc2)cs1 0.03821011524580215 0.0 0.014075794902086537
+ | 23.4479 23.4938 -23.4937 0.0000004 COc1ccc2cc(C(=O)NCCc3ccc(OC)c(OC)c3)ccc2c1 1 0.6911734 0.6912 0.0000000 0.0000 0.21820111572742462 ok 0.09497137228796426 0.22477728128433228 ok 0.0 COc1ccc2cc(C(=O)NCCc3ccc(OC)c(OC)c3)ccc2c1 0.09959060147336968 0.0 0.0
+ | 36.9869 36.9112 -36.9111 0.0000004 C#CC1(O)CC2C(C(=O)C(C)=C3CC(=O)CCC32C)C2CCC(C(=O)OC)C21C 1 0.5426346 0.5426 0.0000000 0.0000 0.10189329211910565 ok 0.03973970162061524 0.17418547968069711 ok 0.0 C#CC1(O)CC2C(C(=O)C(C)=C3CC(=O)CCC32C)C2CCC(C(=O)OC)C21C 0.06872022678911761 0.0 0.0
+ | 44.9625 44.5840 -44.5840 0.0000000 c12[nH]c(O)c(O)c(=O)c1cc(-c1c3c(cc[nH]1)cc(C(=O)N(CCC(C)C)CCC(C)C)cc3)cc2 0 0.0000000 0.0000 0.0000000 0.0000 None None None None None None None None None None
+ | 26.5087 26.6577 -26.6576 0.0000004 Oc1ccccc1-c1cc2c(=NCc3cccs3)[nH]cnc2o1 1 0.6036122 0.6036 0.0000000 0.0000 0.26841720938682556 ok 0.13556061249470955 0.2948390245437622 ok 0.0 Oc1ccccc1-c1cc2c(=NCc3cccs3)[nH]cnc2o1 0.16228990708482552 0.0 0.0
+ | 26.7562 26.7821 -26.7821 0.0000003 O=C(CCc1csc2nc(-c3ccccc3)cn12)N1CCN(c2ccccn2)CC1 1 0.4964367 0.4964 0.0000000 0.0000 0.23959247767925262 ok 0.11073452149181258 0.25185781717300415 ok 0.0 O=C(CCc1csc2nc(-c3ccccc3)cn12)N1CCN(c2ccccn2)CC1 0.12077224598524185 0.0 0.0
+04:08:41 <INFO> Score: 0.00 Agent NLL: 28.57 Valid: 100% Step: 7
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 33.8386 33.7023 -33.4108 0.0022779 CN(Cc1ccc(C#N)cc1)S(=O)(=O)c1ccc(S(=O)(=O)N2CCN(S(=O)(=O)c3ccccc3)CC2)cc1 1 0.4018029 0.4018 0.0006251 0.0006 0.1799307813247045 ok 0.07172066664909195 0.17756452908118567 ok 0.000625063860919553 CN(Cc1ccc(C#N)cc1)S(=O)(=O)c1ccc(S(=O)(=O)N2CCN(S(=O)(=O)c3ccccc3)CC2)cc1 0.07047053892725284 0.0 0.000625063860919553
+ | 24.9754 25.0904 -25.0903 0.0000004 COc1cccc(-n2c(O)cc(NCc3cccnc3)c2O)c1 1 0.6749658 0.6750 0.0000000 0.0000 0.19051498174667358 ok 0.07756646477027047 0.3122217158476512 ok 0.0 COc1cccc(-n2c(O)cc(NCc3cccnc3)c2O)c1 0.1820937177808441 0.0 0.0
+ | 35.9980 35.7389 -35.7388 0.0000003 CC(N=c1nc(N2C(=O)OCC2C(C)C)cc[nH]1)c1ccc(-c2cnc3ccc(C#N)cn23)cc1Cl 1 0.4180350 0.4180 0.0000000 0.0000 0.06207229270755003 ok 0.0292150308633451 0.07765767676755786 ok 0.0 CC(N=c1nc(N2C(=O)OCC2C(C)C)cc[nH]1)c1ccc(-c2cnc3ccc(C#N)cn23)cc1Cl 0.03296658473267982 0.0 0.0
+ | 27.1746 27.1292 -27.1291 0.0000003 C=CCNC(=O)c1onc(CSc2cccc(Cl)c2F)c1C(=O)NCCOC 1 0.3436679 0.3437 0.0000000 0.0000 0.18178233007589975 ok 0.07271310609524505 0.21731081108252207 ok 0.0 C=CCNC(=O)c1onc(CSc2cccc(Cl)c2F)c1C(=O)NCCOC 0.09436094944011371 0.0 0.0
+ | 27.7854 27.5627 -27.5626 0.0000003 O=C(NCc1ccc(Cl)cc1)c1ncc(-c2ccc(Cl)cc2Cl)c(-c2ccc(Cl)cc2Cl)n1 1 0.2805660 0.2806 0.0000000 0.0000 0.2601383924484253 ok 0.12798507763576944 0.2855348487695058 ok 0.0 O=C(NCc1ccc(Cl)cc1)c1ncc(-c2ccc(Cl)cc2Cl)c(-c2ccc(Cl)cc2Cl)n1 0.15242312017797394 0.0 0.0
+ | 21.6958 21.5200 -21.5199 0.0000004 Cc1cc(Cl)ccc1OCC(=O)Nc1sc2c(c1C#N)CCCC2 1 0.8739694 0.8740 0.0000000 0.0000 0.30510903398195904 ok 0.17377184798380593 0.3658474087715149 ok 0.0 Cc1cc(Cl)ccc1OCC(=O)Nc1sc2c(c1C#N)CCCC2 0.2547910730759057 0.0 0.0
+ | 25.8239 25.9719 -25.9719 0.0000004 CN1C(=O)COc2cc(CCN3CCC(Cc4ccc(S(C)(=O)=O)cc4)CC3)ccc21 1 0.6882094 0.6882 0.0000000 0.0000 0.22259206076463064 ok 0.0980339075250749 0.35876521468162537 ok 0.0 CN1C(=O)COc2cc(CCN3CCC(Cc4ccc(S(C)(=O)=O)cc4)CC3)ccc21 0.2441835641294745 0.0 0.0
+ | 31.2891 31.3621 -29.6329 0.0135093 CC(NC(=O)c1cncs1)c1ccc(OC2(C)CCN(c3ccccn3)C2)cc1 1 0.6657522 0.6658 0.0050988 0.0051 0.1120174452662468 ok 0.042948296233802176 0.07680888722340266 ok 0.005098750096525113 CC(NC(=O)c1cncs1)c1ccc(OC2(C)CCN(c3ccccn3)C2)cc1 0.03275079604075195 0.0 0.005098750096525113
+04:16:24 <INFO> Score: 0.02 Agent NLL: 29.21 Valid: 100% Step: 8
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 31.2332 31.7821 -24.9466 0.0534020 COc1cccc(Cc2nc3ccccc3nc2SCCCC(=O)O)c1 1 0.4748074 0.4748 0.0309256 0.0309 0.25699778894583386 ok 0.1252071348166415 0.16330823053916296 ok 0.030925582119448493 COc1cccc(Cc2nc3ccccc3nc2SCCCC(=O)O)c1 0.06335597057774452 0.0 0.030925582119448493
+ | 30.2303 30.3748 -30.3747 0.0000004 CC(=O)S(=O)(=O)N(c1ccc(Oc2ccc(C)cc2)cc1)C(C)C 1 0.8232706 0.8233 0.0000000 0.0000 0.12391420267522335 ok 0.04703499071406401 0.12686121463775635 ok 0.0 CC(=O)S(=O)(=O)N(c1ccc(Oc2ccc(C)cc2)cc1)C(C)C 0.0481030919232446 0.0 0.0
+ | 39.6271 39.5610 -32.5808 0.0545331 O=C(C1CCCNC1)N1CC(COc2ccc3c(c2)C2(COC2)C2(CCC(OC(F)F)CC2)C3)C1 1 0.6614965 0.6615 0.0292209 0.0292 0.25411325693130493 ok 0.12270136847954365 0.1651991903781891 ok 0.029220869758864926 O=C(C1CCCNC1)N1CC(COc2ccc3c(c2)C2(COC2)C2(CCC(OC(F)F)CC2)C3)C1 0.0642596289618138 0.0 0.029220869758864926
+ | 23.1743 23.4031 -23.4031 0.0000004 O=C(O)C1CCCN(CCN2CCCCC2)C1 1 0.8034426 0.8034 0.0000000 0.0000 0.11105524003505707 ok 0.04263300518417987 0.13923207173744837 ok 0.0 O=C(O)C1CCCN(CCN2CCCCC2)C1 0.052842809148642395 0.0 0.0
+ | 29.8541 29.7674 -29.7673 0.0000004 COc1ccccc1N1CCN(C(=O)C2CC3Cc4cccc(OCC(=O)O)c4CC3N(C)C2)CC1 1 0.6623267 0.6623 0.0000000 0.0000 0.2267312854528427 ok 0.10100116234691736 0.23220952848593393 ok 0.0 COc1ccccc1N1CCN(C(=O)C2CC3Cc4cccc(OCC(=O)O)c4CC3N(C)C2)CC1 0.10505071934366307 0.0 0.0
+ | 27.8121 27.5223 -27.5222 0.0000004 CC(C)c1cccc(OCc2nnc(-c3ccc(C#N)cc3)o2)c1 1 0.7003821 0.7004 0.0000000 0.0000 0.2289623940984408 ok 0.10263341944977208 0.23589201271533966 ok 0.0 CC(C)c1cccc(OCc2nnc(-c3ccc(C#N)cc3)o2)c1 0.10785279120805258 0.0 0.0
+ | 30.8815 30.7721 -30.7721 0.0000004 CC(C)=CC(=O)N1CCC(Oc2ncnc(Oc3ncccc3C)c2F)CC1 1 0.7327685 0.7328 0.0000000 0.0000 0.1775387798746427 ok 0.07045704662183751 0.24363898734251657 ok 0.0 CC(C)=CC(=O)N1CCC(Oc2ncnc(Oc3ncccc3C)c2F)CC1 0.11396267434312474 0.0 0.0
+ | 20.8762 20.7287 -18.5346 0.0171416 Cc1onc(-c2ccccc2Cl)c1C(=O)NCc1ccc2c(c1)OCO2 1 0.7520023 0.7520 0.0066606 0.0067 0.2339288890361786 ok 0.10635092856779076 0.21535131335258484 ok 0.006660554627389674 Cc1onc(-c2ccccc2Cl)c1C(=O)NCc1ccc2c(c1)OCO2 0.09302981931301141 0.0 0.006660554627389674
+04:24:09 <INFO> Score: 0.02 Agent NLL: 30.10 Valid: 100% Step: 9
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 20.3672 20.8640 -14.8913 0.0466615 COc1ccc(C=NN2CCCCC2C)cc1 1 0.7485105 0.7485 0.0233158 0.0233 0.2655520389477412 ok 0.132896964238618 0.20498615006605783 ok 0.023315751885395482 COc1ccc(C=NN2CCCCC2C)cc1 0.08626546046782703 0.0 0.023315751885395482
+ | 23.8761 23.6867 -23.6867 0.0000004 O=C(Nc1ccc2c(c1)OCO2)c1ccc(F)c(S(=O)(=O)N2CCCCCC2)c1 1 0.8198390 0.8198 0.0000000 0.0000 0.14416369795799255 ok 0.05485264615275984 0.22988279412190119 ok 0.0 O=C(Nc1ccc2c(c1)OCO2)c1ccc(F)c(S(=O)(=O)N2CCCCCC2)c1 0.1033135556498868 0.0 0.0
+ | 41.2509 40.9548 -40.9548 0.0000003 CC(C)C(NS(=O)(=O)c1ccc2ccc(S(=O)(=O)N(CCO)Cc3ccc(-c4csnn4)cc3)cc2c1)C(=O)O 1 0.2202728 0.2203 0.0000000 0.0000 0.10647442936897278 ok 0.04116208165678612 0.13094464441140494 ok 0.0 CC(C)C(NS(=O)(=O)c1ccc2ccc(S(=O)(=O)N(CCO)Cc3ccc(-c4csnn4)cc3)cc2c1)C(=O)O 0.049621182809883584 0.0 0.0
+ | 27.4412 27.5316 -27.5316 0.0000004 c1cc(CN2CCc3ncc(-c4ccsc4)nc3CC2)ccn1 1 0.7424604 0.7425 0.0000000 0.0000 0.25680217146873474 ok 0.12503582698802904 0.26476791501045227 ok 0.0 c1cc(CN2CCc3ncc(-c4ccsc4)nc3CC2)ccn1 0.13217575698364542 0.0 0.0
+ | 29.7640 29.4758 -20.3763 0.0710899 COCCOc1ccc(-c2cc(C3=CCCN(C)C3)on2)c(Cl)c1 1 0.7441453 0.7441 0.0395226 0.0395 0.3088647425174713 ok 0.17812803108371958 0.2240679239233335 ok 0.03952257614602937 COCCOc1ccc(-c2cc(C3=CCCN(C)C3)on2)c(Cl)c1 0.09908287879166083 0.0 0.03952257614602937
+ | 47.7177 47.8509 -46.5840 0.0098979 CN(C)C(=O)c1ccc2ccc(C=C3CN4C(=O)C5=CC=CC=C4NC(C)(C)C(C(=O)O)N5C3=O)cc2c1 1 0.6123562 0.6124 0.0035292 0.0035 0.27286016444365185 ok 0.1397799672926735 0.2653616666793823 ok 0.003529202945476234 CN(C)C(=O)c1ccc2ccc(C=C3CN4C(=O)C5=CC=CC=C4NC(C)(C)C(C(=O)O)N5C3=O)cc2c1 0.13272156140172103 0.0 0.003529202945476234
+ | 19.7703 19.5947 -19.5947 0.0000004 NC1CCC(N=c2cc(-c3cccc(=NCc4ccccc4F)[nH]3)c(Cl)c[nH]2)CC1 1 0.5780376 0.5780 0.0000000 0.0000 0.2139719550808271 ok 0.09210292145318133 0.28094103187322617 ok 0.0 NC1CCC(N=c2cc(-c3cccc(=NCc4ccccc4F)[nH]3)c(Cl)c[nH]2)CC1 0.14773570988202583 0.0 0.0
+ | 30.6194 30.7320 -30.7320 0.0000003 O=C(N=c1cc(C(O)NCC(O)c2ccccn2)[nH]n1-c1ccccc1)c1cc(-c2ccc(F)cn2)c(Cl)cc1Cl 1 0.1922106 0.1922 0.0000000 0.0000 0.26513561606407166 ok 0.13251354037451932 0.2684936175743739 ok 0.0 O=C(N=c1cc(C(O)NCC(O)c2ccccn2)[nH]n1-c1ccccc1)c1cc(-c2ccc(F)cn2)c(Cl)cc1Cl 0.13563225894844516 0.0 0.0
+04:32:17 <INFO> Score: 0.03 Agent NLL: 27.51 Valid: 100% Step: 10
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 25.6274 25.6545 -25.6544 0.0000004 Cc1nc(C)c(C=C2CCC(=Cc3cccc4ccccc34)C2=O)nc1C 1 0.5799203 0.5799 0.0000000 0.0000 0.39226922392845154 ok 0.29695376414999247 0.39588825901349384 ok 0.0 Cc1nc(C)c(C=C2CCC(=Cc3cccc4ccccc34)C2=O)nc1C 0.3030335122776516 0.0 0.0
+ | 25.9915 25.7209 -25.7209 0.0000003 O=C(c1ccc(Cl)cc1)n1nc(-c2ccc(Cl)cc2)c(N2CCCCC2)c1-c1ccc(Cl)cc1 1 0.2803871 0.2804 0.0000000 0.0000 0.32565516233444214 ok 0.19864914386420923 0.4008551736672719 ok 0.0 O=C(c1ccc(Cl)cc1)n1nc(-c2ccc(Cl)cc2)c(N2CCCCC2)c1-c1ccc(Cl)cc1 0.31149085715873936 0.0 0.0
+ | 24.6285 24.8887 -19.1870 0.0445447 OCC(O)Cn1nnc(CCc2ccccc2)n1 1 0.7400364 0.7400 0.0220639 0.0221 0.20462581515312195 ok 0.08603850776590939 0.1088252067565918 ok 0.02206387419984036 OCC(O)Cn1nnc(CCc2ccccc2)n1 0.04191075936622867 0.0 0.02206387419984036
+ | 27.3696 27.1132 -27.1131 0.0000003 Cc1ccc(Cn2c(=S)[nH]c3cc(C(=O)N4CCN(c5ccccc5Cl)CC4)ccc3c2=O)cc1 1 0.3958250 0.3958 0.0000000 0.0000 0.18135511875152588 ok 0.0724830014494732 0.24552715321381888 ok 0.0 Cc1ccc(Cn2c(=S)[nH]c3cc(C(=O)N4CCN(c5ccccc5Cl)CC4)ccc3c2=O)cc1 0.11549685447198499 0.0 0.0
+ | 27.7297 28.0741 -21.3877 0.0522371 CCOc1nn2c(C)cc(C)nc2c1S(=O)(=O)c1cc(C)ccc1OC 1 0.6818527 0.6819 0.0274822 0.0275 0.2779044856627782 ok 0.1447031604439374 0.21039638419946036 ok 0.02748220324131144 CCOc1nn2c(C)cc(C)nc2c1S(=O)(=O)c1cc(C)ccc1OC 0.08973875396131453 0.0 0.02748220324131144
+ | 28.9657 28.8885 -28.8885 0.0000003 Clc1ccc2[nH]c(-c3ccc4[nH]c(-c5ccccc5)nc4c3)cc2c1Cl 1 0.3533430 0.3533 0.0000000 0.0000 0.3542296638091405 ok 0.23754929642219508 0.4547668397426605 ok 0.0 Clc1ccc2[nH]c(-c3ccc4[nH]c(-c5ccccc5)nc4c3)cc2c1Cl 0.41050810886519756 0.0 0.0
+ | 28.9299 28.8901 -28.8900 0.0000004 Cc1ccccc1S(=O)(=O)n1[nH]c(OC(=O)c2ncccc2C)cc1=N 1 0.6767588 0.6768 0.0000000 0.0000 0.3015548487504323 ok 0.16972729430964165 0.31046850482622784 ok 0.0 Cc1ccccc1S(=O)(=O)n1[nH]c(OC(=O)c2ncccc2C)cc1=N 0.18001410036056223 0.0 0.0
+ | 30.8322 30.9813 -16.7639 0.1110734 O=C(NCc1ccc(F)cc1)N(CCN1CCOCC1)C1CCN(Cc2nc3ccccc3s2)CC1 1 0.4964993 0.4965 0.0763893 0.0764 0.34809499979019165 ok 0.22877520648489555 0.18774645030498505 ok 0.07638934708550651 O=C(NCc1ccc(F)cc1)N(CCN1CCOCC1)C1CCN(Cc2nc3ccccc3s2)CC1 0.07599651231388252 0.0 0.07638934708550651
+04:40:07 <INFO> Score: 0.03 Agent NLL: 31.30 Valid: 100% Step: 11
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 48.2400 48.5324 -38.0654 0.0817737 CCN(CC)Cn1c(O)c(N=NC(=O)c2cn(CC)c3cc(Br)c(S(=O)(=O)c4ccc(N)cc4)cc3c2=O)c2ccccc21 1 0.1414638 0.1415 0.0713027 0.0713 0.36956573526064557 ok 0.2604802169703994 0.24841113264362016 ok 0.0713027078116357 CCN(CC)Cn1c(O)c(N=NC(=O)c2cn(CC)c3cc(Br)c(S(=O)(=O)c4ccc(N)cc4)cc3c2=O)c2ccccc21 0.11787480134712801 0.0 0.0713027078116357
+ | 35.7940 36.1128 -34.2463 0.0145824 CCC(NC(=O)C1OC1C(=O)O)C(=O)C(=O)NCCc1ccc2ccccc2n1 1 0.4046677 0.4047 0.0063535 0.0064 0.1703389286994934 ok 0.06677680718520719 0.1422636260588964 ok 0.006353452805158859 CCC(NC(=O)C1OC1C(=O)O)C(=O)C(=O)NCCc1ccc2ccccc2n1 0.05406990157488947 0.0 0.006353452805158859
+ | 25.0433 24.9095 -24.9095 0.0000003 O=C(NNC(=O)c1ccccc1Br)c1cc(C23CC4CC(CC(C4)C2)C3)c2ccccc2n1 1 0.4605052 0.4605 0.0000000 0.0000 0.33465708295504254 ok 0.21036223588402111 0.41313761472702026 ok 0.0 O=C(NNC(=O)c1ccccc1Br)c1cc(C23CC4CC(CC(C4)C2)C3)c2ccccc2n1 0.33294413560025643 0.0 0.0
+ | 29.1237 29.2502 -29.2501 0.0000004 COc1ccc(-n2nc3c(=O)cc(-c4cccc(Cl)c4)[nH]c3c2C)cc1 1 0.5867585 0.5868 0.0000000 0.0000 0.23582867036263147 ok 0.10780404219975664 0.33046341439088184 ok 0.0 COc1ccc(-n2nc3c(=O)cc(-c4cccc(Cl)c4)[nH]c3c2C)cc1 0.20484349882706726 0.0 0.0
+ | 28.6056 29.0835 -15.0578 0.1095755 COc1cc(N=c2[nH]n(Cc3ccc(C)cc3)c3[nH]c4ccccc4c23)cc(OC)c1 1 0.4238217 0.4238 0.0781351 0.0781 0.43899062275886536 ok 0.38034714896890176 0.34474199016888935 ok 0.07813512081809583 COc1cc(N=c2[nH]n(Cc3ccc(C)cc3)c3[nH]c4ccccc4c23)cc(OC)c1 0.2240769073327101 0.0 0.07813512081809583
+ | 30.4030 30.6241 -26.6773 0.0308343 O=C(NCc1cncc2ccccc12)c1ccc2c(c1)S(=O)(=O)c1ccccc1C2=O 1 0.4744519 0.4745 0.0155684 0.0156 0.30601894358793896 ok 0.17481945469196963 0.2768706977367401 ok 0.015568428358439357 O=C(NCc1cncc2ccccc12)c1ccc2c(c1)S(=O)(=O)c1ccccc1C2=O 0.14368259797509092 0.0 0.015568428358439357
+ | 27.7090 27.6195 -27.6194 0.0000003 O=c1c2ccccc2c(C=NCc2cn(-c3ccccc3)nn2)c(O)n1-c1ccccc1F 1 0.4191096 0.4191 0.0000000 0.0000 0.23319261769453684 ok 0.10579242093899754 0.38108061750729877 ok 0.0 O=c1c2ccccc2c(C=NCc2cn(-c3ccccc3)nn2)c(O)n1-c1ccccc1F 0.2786123901455287 0.0 0.0
+ | 25.4828 25.7979 -25.7978 0.0000003 COc1cc(C(=O)Nc2cccc(-c3nc4ccccc4s3)c2)c([N+](=O)[O-])cc1OC 1 0.3321461 0.3321 0.0000000 0.0000 0.3013700594504674 ok 0.16951907203511574 0.5053033232688904 ok 0.0 COc1cc(C(=O)Nc2cccc(-c3nc4ccccc4s3)c2)c([N+](=O)[O-])cc1OC 0.5106050558136861 0.0 0.0
+04:47:13 <INFO> Score: 0.01 Agent NLL: 28.43 Valid: 100% Step: 12
+ | Agent Prior Target Score SMILES SMILES_state QED Score QED Score (raw) DualDock Selectivity DualDock Selectivity (raw) targetA_raw (DualDock Selectivity) offTargetB_reason (DualDock Selectivity) targetA_score (DualDock Selectivity) offTargetB_raw (DualDock Selectivity) targetA_reason (DualDock Selectivity) boltz2_score (DualDock Selectivity) canonical_smiles (DualDock Selectivity) offTargetB_score (DualDock Selectivity) offTargetPenalty (DualDock Selectivity) boltz2_dual_score (DualDock Selectivity)
+ | 40.5171 40.5860 -40.5860 0.0000003 COc1ccc(CC2C(=O)c3ccccc3OC2(C(C)=O)c2ccccc2)cc1OS(C)(=O)=O 1 0.4725608 0.4726 0.0000000 0.0000 0.143370454510053 ok 0.05452457576474832 0.19118429720401764 ok 0.0 COc1ccc(CC2C(=O)c3ccccc3OC2(C(C)=O)c2ccccc2)cc1OS(C)(=O)=O 0.07795044807317653 0.0 0.0
+ | 39.2804 39.6399 -39.6399 0.0000004 CCC1C(=O)C2(CCN(C(C(=O)NC3CCCCC3)c3cccc(F)c3)C2=O)N2CCCC12 1 0.6916008 0.6916 0.0000000 0.0000 0.09642945478359859 ok 0.03810483243196861 0.11797125389178593 ok 0.0 CCC1C(=O)C2(CCN(C(C(=O)NC3CCCCC3)c3cccc(F)c3)C2=O)N2CCCC12 0.0449492687166097 0.0 0.0
+ | 21.1494 20.9912 -20.9911 0.0000004 N=C1N=C(Nc2cccc(F)c2)c2ccccc21 1 0.7891122 0.7891 0.0000000 0.0000 0.46445804834365845 ok 0.42939116477909356 0.5266365011533102 ok 0.0 N=C1N=C(Nc2cccc(F)c2)c2ccccc21 0.5530723275373525 0.0 0.0
+ | 32.9317 33.1133 -22.5689 0.0823778 COc1ccc(CN=c2nc3nc(Oc4cccc(OC)c4)cc(N4CCOCC4)n3[nH]2)cc1 1 0.4509447 0.4509 0.0538558 0.0539 0.432343731323878 ok 0.3678968136016458 0.369374285141627 ok 0.05385576054564656 COc1ccc(CN=c2nc3nc(Oc4cccc(OC)c4)cc(N4CCOCC4)n3[nH]2)cc1 0.26018529251035266 0.0 0.05385576054564656
+ | 24.1343 23.8116 -23.8116 0.0000004 Cc1cccc(N=c2nc(-c3ccc(S(N)(=O)=O)cc3)cc[nH]2)c1 1 0.7643806 0.7644 0.0000000 0.0000 0.16528751204411188 ok 0.06430212853159213 0.3339203695456187 ok 0.0 Cc1cccc(N=c2nc(-c3ccc(S(N)(=O)=O)cc3)cc[nH]2)c1 0.20938490354588174 0.0 0.0
+ | 25.9289 25.9269 -25.9269 0.0000003 O=C(COc1cccc2c(=O)c3ccccc3oc12)N1CCN(c2ccccn2)CC1 1 0.4770604 0.4771 0.0000000 0.0000 0.25554562111695606 ok 0.1239402142418322 0.2819753587245941 ok 0.0 O=C(COc1cccc2c(=O)c3ccccc3oc12)N1CCN(c2ccccn2)CC1 0.14878060530928827 0.0 0.0
+ | 19.8756 19.9832 -15.7013 0.0334517 N=C(NOC(=O)c1ccccc1Cl)c1ccncc1 1 0.5013534 0.5014 0.0170015 0.0170 0.23722796142101288 ok 0.10888547540135161 0.1857499728600184 ok 0.017001476582427615 N=C(NOC(=O)c1ccccc1Cl)c1ccncc1 0.07488252223649638 0.0 0.017001476582427615
+ | 23.6368 23.5907 -23.5906 0.0000004 CN(C)c1ccc(S(=O)(=O)n2ccc3ccccc32)cc1 1 0.7466333 0.7466 0.0000000 0.0000 0.25509632627169293 ok 0.12355046946208849 0.26097619036833447 ok 0.0 CN(C)c1ccc(S(=O)(=O)n2ccc3ccccc32)cc1 0.12873496339176646 0.0 0.0
+04:47:13 <WARN> Maximum number of steps of 12 reached in stage 1. Terminating all stages.
+04:47:13 <INFO> Peak main memory usage: 1786.191 MiB
+04:47:13 <INFO> Finished REINVENT on 2026-02-21

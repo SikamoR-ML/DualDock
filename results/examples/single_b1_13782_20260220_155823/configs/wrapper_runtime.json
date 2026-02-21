@@ -1,0 +1,64 @@
+{
+  "run_id": "single_target_b1_a6000",
+  "repo_root": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock",
+  "docking": {
+    "mode": "single"
+  },
+  "targets": {
+    "target_a": {
+      "name": "b1",
+      "template": "assets/targets/adrenoreceptors/b1.yaml",
+      "normalization": {
+        "method": "sigmoid",
+        "midpoint": 0.5,
+        "slope": 8.0,
+        "clip_min": 0.0,
+        "clip_max": 1.0,
+        "invert": false
+      }
+    }
+  },
+  "selectivity": {
+    "mode": "weighted_sum",
+    "weight_a": 1.0,
+    "weight_b": 0.0,
+    "reward_shift": 0.0,
+    "reward_clip_min": 0.0,
+    "reward_clip_max": 1.0,
+    "penalty": {
+      "off_target_threshold": 2.0,
+      "off_target_penalty": 0.0
+    }
+  },
+  "fallback": {
+    "score": 0.05,
+    "invalid_smiles_score": 0.0
+  },
+  "validation": {
+    "require_rdkit": true
+  },
+  "boltz": {
+    "bin": "/nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz",
+    "model": "boltz2",
+    "score_mode": "prob",
+    "timeout_sec": 900,
+    "accelerator": "gpu",
+    "devices": "1",
+    "num_workers": 2,
+    "recycling_steps": 1,
+    "sampling_steps": 6,
+    "diffusion_samples": 1,
+    "sampling_steps_affinity": 6,
+    "diffusion_samples_affinity": 1,
+    "keep_tmp": false
+  },
+  "cache": {
+    "db_path": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/cache/boltz_cache.sqlite",
+    "namespace": "single_target_b1_a6000"
+  },
+  "logging": {
+    "wrapper_log": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/logs/wrapper.log",
+    "trace_jsonl": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/logs/per_molecule_scores.jsonl",
+    "trace_counter": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/logs/trace_counter.txt"
+  }
+}

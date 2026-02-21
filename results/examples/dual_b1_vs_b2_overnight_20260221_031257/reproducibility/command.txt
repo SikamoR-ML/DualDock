@@ -1,0 +1,1 @@
+/nfs/home/apodshibiakin/bin/reinvent -l /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/logs/reinvent.log /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/configs/staged_learning.toml

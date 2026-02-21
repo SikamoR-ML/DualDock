@@ -1,0 +1,65 @@
+19:11:29 <INFO> Started REINVENT 4.7.15 (C) AstraZeneca 2017, 2023 on 2026-02-20
+19:11:29 <INFO> Command line: /nfs/home/apodshibiakin/projects/PotatoDualDock/REINVENT4/reinvent/Reinvent.py -l /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/logs/post_sampling_reinvent.log /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/configs/post_sampling.toml
+19:11:29 <INFO> Reading run configuration from /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/configs/post_sampling.toml using format toml
+19:11:29 <INFO> User apodshibiakin on host aichem
+19:11:29 <INFO> Python version 3.12.12
+19:11:29 <INFO> PyTorch version 2.9.1+cu128, git 5811a8d7da873dd699ff6687092c225caffcf1bb
+19:11:29 <INFO> PyTorch compiled with CUDA version 12.8
+19:11:29 <INFO> RDKit version 2025.09.5
+19:11:29 <INFO> Platform Linux-5.15.0-170-generic-x86_64-with-glibc2.35
+19:11:29 <INFO> CUDA driver version 550.144.03
+19:11:29 <INFO> Number of PyTorch CUDA devices 1
+19:11:29 <WARN> 'use_cuda' is deprecated, use 'device' instead
+19:11:29 <INFO> Using GPU device:0 NVIDIA RTX A6000
+19:11:29 <INFO> GPU memory: 48402 MiB free, 48669 MiB total
+19:11:29 <INFO> Writing TensorBoard summary to /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/tb_logs_sampling
+19:11:29 <INFO> Writing JSON config file to /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/configs/sampling_rendered.json
+19:11:29 <INFO> Starting Sampling
+19:11:29 <INFO> /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/checkpoints/single_b1_agent_stage01.chkpt has valid hash:
+{ 'comments': ['RL'],
+  'creation_date': 0,
+  'date_format': 'UNIX epoch',
+  'hash_id': 'bc55efd4618f3196f248da4445a3e06f',
+  'hash_id_format': 'xxhash.xxh3_128_hex 3.6.0',
+  'model_id': '55d68f8a81c04f5a86304ebe1723a0ea',
+  'model_id_format': 'uuid.uuid4 3.10.12',
+  'origina_data_source': 'ChEMBL 25',
+  'updates': [1771603881.8683949]}
+19:11:29 <INFO> Number of network parameters: 5,805,602
+19:11:29 <INFO> Network architecture:
+RNN(
+  (_embedding): Embedding(34, 256)
+  (_rnn): LSTM(256, 512, num_layers=3, batch_first=True)
+  (_linear): Linear(in_features=512, out_features=34, bias=True)
+)
+19:11:29 <INFO> Using generator Reinvent
+19:11:29 <INFO> Writing sampled SMILES to CSV file /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/results/post_sampling/sampled_smiles.csv
+19:11:29 <INFO> Sampling 1500 SMILES from model /nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/checkpoints/single_b1_agent_stage01.chkpt
+19:11:30 <INFO> Sampled SMILES n1c2c(c(C)ccc2Cl)c2c3c(n(C4C(O)C(O)C(OC)C(CO)O4)c1-2)cc(F)c(F)c3 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c12nc3c4c(nccc4c(OCC)c1)-c1cc(OC)c(OC)cc1CC3CN(CCN(C)C)C2 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES N(c1c(F)cccc1F)=c1c(C#CC[n+]2ccccc2)cn[nH]1 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1ccccc1-n1c2[nH]c(=S)nc(Cl)c2cc2c(=O)n3c(nc21)SCCC3 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES N(=c1[nH]nn(C)c1)CC1(c2ccccc2OC)CC1 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c12cn[nH]c1ccc(-c1ccnc3n1nc(C)c2)cc3 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES Cc1ccc2c(oc3n(CN(CCOC(=O)C4CCCN4C(=O)OC(C)(C)C)N)ncc2c3=O)c1 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1cc(C2C=C(c3ccc4ccccc4c3)CC(=O)C2)cc2c1nnc2 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES S=C1c2c3c(c(C(=O)NCc4ncccc4)nc2sc1C)-c1ccccc1CC3 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1(-c2c3[nH]c(C(c4ccccc4F)NC(=O)NC)c(C)nc3ccc2)ccncc1 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES n1c(=Nc2nc3c(OC4CCCOC4)cccc3[nH]2)ccc(C#N)c[nH]1 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1cc(-n2cc3c4c(nccc4)sc3c(=N)n2)cc(Cl)c1 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES O=C1c2cccc3c(N4CCN(CCCCOc5ccc6c(oc(=O)c7ccccc76)C5)c4)ccc(c32)C(=O)N1CCO failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1c(Cl)cccc1CN(C)C(=O)c1ncn2c(=O)n(CC)nc12 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1(SCC(Nc2ccc(C)cc2)=O)[nH]c(=O)[nH]nc1=O failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1(N2CCCC2)cc(=NC2CC2)n2c(c(C)nc2)c1C(O)N failed to sanitize.
+19:11:30 <INFO> Sampled SMILES C1CCN(C(=O)c2ccc3n(c2)c(N(c2ccccc2)C(NCC)=O)c(OC)cn3)CCN1CC failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1(-c2ccc(-c3ccc(N)cc3)cc2)nnn2c3c(c(OC)[nH]c12)cccc3 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES n1c(-c2cc(F)ccc2)cc(=O)cc1O failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1(C)ccc2cc(-c3ccccc3)c(C=NNc3ccc([N+](=O)[O-])cc3Cl)c2n1 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1cc2c3c(nc(C(C)C)cc3cc(C(=O)O)c2)c1-c1cccc(O)c1 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES c1c(-c2c3c4n[nH]cc4c(=O)n(CC)c3s2)cccc1OC failed to sanitize.
+19:11:30 <INFO> Sampled SMILES [nH]1c2cc3c(cc2ccn1)c(=Nc1c(O)ccc(Cl)c1)nc[nH]3 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES C1=Cc2ccc3oc4c(c(=O)c3c(OC)c2O1)cccc4 failed to sanitize.
+19:11:30 <INFO> Sampled SMILES C1C(N=c2c(C#N)c3c(c(-c4cc([N+](=O)[O-])c(OC)cc4)[nH]2)=CCCC=3)CCCC1 failed to sanitize.
+19:11:31 <INFO> Removed 30 invalid SMILES
+19:11:31 <INFO> Peak main memory usage: 1611.750 MiB
+19:11:31 <INFO> Finished REINVENT on 2026-02-20

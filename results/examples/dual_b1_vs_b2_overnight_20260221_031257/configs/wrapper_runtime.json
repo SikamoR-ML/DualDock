@@ -1,0 +1,76 @@
+{
+  "run_id": "dual_selective_b1_vs_b2_a6000",
+  "repo_root": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock",
+  "docking": {
+    "mode": "dual"
+  },
+  "targets": {
+    "target_a": {
+      "name": "b1",
+      "template": "assets/targets/adrenoreceptors/b1.yaml",
+      "normalization": {
+        "method": "sigmoid",
+        "midpoint": 0.5,
+        "slope": 8.0,
+        "clip_min": 0.0,
+        "clip_max": 1.0,
+        "invert": false
+      }
+    },
+    "target_b": {
+      "name": "b2",
+      "template": "assets/targets/adrenoreceptors/b2.yaml",
+      "normalization": {
+        "method": "sigmoid",
+        "midpoint": 0.5,
+        "slope": 8.0,
+        "clip_min": 0.0,
+        "clip_max": 1.0,
+        "invert": false
+      }
+    }
+  },
+  "selectivity": {
+    "mode": "weighted_sum",
+    "weight_a": 0.5,
+    "weight_b": 0.5,
+    "reward_shift": 0.0,
+    "reward_clip_min": 0.0,
+    "reward_clip_max": 1.0,
+    "penalty": {
+      "off_target_threshold": 0.7,
+      "off_target_penalty": 0.2
+    }
+  },
+  "fallback": {
+    "score": 0.05,
+    "invalid_smiles_score": 0.0
+  },
+  "validation": {
+    "require_rdkit": true
+  },
+  "boltz": {
+    "bin": "/nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz",
+    "model": "boltz2",
+    "score_mode": "prob",
+    "timeout_sec": 900,
+    "accelerator": "gpu",
+    "devices": "1",
+    "num_workers": 2,
+    "recycling_steps": 1,
+    "sampling_steps": 3,
+    "diffusion_samples": 1,
+    "sampling_steps_affinity": 3,
+    "diffusion_samples_affinity": 1,
+    "keep_tmp": false
+  },
+  "cache": {
+    "db_path": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/cache/boltz_cache.sqlite",
+    "namespace": "dual_selective_b1_vs_b2_a6000"
+  },
+  "logging": {
+    "wrapper_log": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/logs/wrapper.log",
+    "trace_jsonl": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/logs/per_molecule_scores.jsonl",
+    "trace_counter": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/logs/trace_counter.txt"
+  }
+}

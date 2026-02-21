@@ -1,0 +1,24 @@
+[hardware]
+name = "A6000"
+# Shared server profile: auto-pick a free GPU from six cards using lock files.
+cuda_visible_devices = "auto"
+gpu_count = 6
+gpu_ids = "0,1,2,3,4,5"
+gpu_lock_dir = "/tmp/dualdock_gpu_locks"
+gpu_lock_wait_sec = 1800
+gpu_lock_poll_sec = 3.0
+
+[rl]
+device = "cuda:0"
+batch_size = 24
+
+[boltz]
+accelerator = "gpu"
+devices = "1"
+num_workers = 2
+recycling_steps = 1
+sampling_steps = 12
+diffusion_samples = 2
+sampling_steps_affinity = 12
+diffusion_samples_affinity = 2
+timeout_sec = 1200

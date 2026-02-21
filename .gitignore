@@ -1,0 +1,58 @@
+# Environment
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime outputs
+runs/
+logs/
+results/*
+!results/.gitkeep
+!results/examples/
+!results/examples/**
+!results/comparison_single_vs_dual/
+!results/comparison_single_vs_dual/**
+!results/comparison_top95_vs95/
+!results/comparison_top95_vs95/**
+*.log
+*.tmp
+
+# Model/checkpoint artifacts
+*.chkpt
+*.ckpt
+*.pt
+*.pth
+*.pkl
+*.sqlite
+*.sqlite3
+
+# TensorBoard and reports
+tb_logs*/
+staged_learning_*.csv
+
+# Keep committed example artifacts even when extension-level ignores apply
+!results/examples/**/*.log
+!results/examples/**/*staged_learning*.csv
+
+# Local tool clones (keep folder structure only)
+boltz/*
+!boltz/.gitkeep
+reinvent4/*
+!reinvent4/.gitkeep
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/

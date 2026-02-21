@@ -1,0 +1,8 @@
+{
+  "head_rc": 0,
+  "head": "8dca2dc05cfd0646c29289673117245dca8d6de9",
+  "head_err": "",
+  "status_rc": 0,
+  "status": "?? .env\n?? scripts/slurm_single_b1.sbatch\n?? slurm_logs/\n?? ../Miniforge3-Linux-x86_64.sh",
+  "status_err": ""
+}

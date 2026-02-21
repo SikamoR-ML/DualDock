@@ -1,0 +1,21 @@
+{
+  "run_dir": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257",
+  "docking_mode": "dual",
+  "reinvent_return_code": 0,
+  "rank_return_code": 0,
+  "trace_jsonl": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/logs/per_molecule_scores.jsonl",
+  "ranked_csv": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/results/ranked_ligands.csv",
+  "ranked_jsonl": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/results/ranked_ligands.jsonl",
+  "checkpoints_dir": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/checkpoints",
+  "staged_summary_prefix": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/dual_b1_vs_b2_overnight_20260221_031257/results/staged_learning",
+  "ranking_criterion": "best_total_reward",
+  "reward_strategy": "dap",
+  "optimizer": "adam",
+  "rank_stdout": "",
+  "rank_stderr": "",
+  "cuda_visible_devices": "0",
+  "allocated_gpu_id": "0",
+  "postprocess": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-02-20T15:58:24+03:00",
+  "python_executable": "/nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/python3",
+  "python_version": "3.12.12",
+  "platform": "Linux-5.15.0-170-generic-x86_64-with-glibc2.35",
+  "selected_env": {
+    "CONDA_EXE": "/nfs/home/apodshibiakin/miniforge3/bin/conda",
+    "CONDA_PREFIX": "/nfs/home/apodshibiakin/miniforge3/envs/boltz2",
+    "CONDA_PROMPT_MODIFIER": "(boltz2) ",
+    "REINVENT4_BIN": "/nfs/home/apodshibiakin/bin/reinvent",
+    "CUDA_VISIBLE_DEVICES": "0",
+    "PYTHON": "/nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/python",
+    "CONDA_SHLVL": "1",
+    "CONDA_PYTHON_EXE": "/nfs/home/apodshibiakin/miniforge3/bin/python",
+    "CONDA_DEFAULT_ENV": "boltz2",
+    "BOLTZ_BIN": "/nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz",
+    "DUALDOCK_WRAPPER_CONFIG": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock/runs/single_b1_13782_20260220_155823/configs/wrapper_runtime.json",
+    "PYTHONPATH": "/nfs/home/apodshibiakin/projects/PotatoDualDock/DualDock",
+    "DUALDOCK_ALLOCATED_GPU_ID": "0"
+  }
+}

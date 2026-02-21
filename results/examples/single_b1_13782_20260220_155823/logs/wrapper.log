@@ -1,0 +1,480 @@
+[2026-02-20 15:59:14] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 15:59:14] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_10xqym1i/in --out_dir /tmp/dualdock_boltz_batch_10xqym1i/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 16:10:33] Boltz rc=0; stderr_tail=to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3095394) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 16:10:35] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 16:10:35] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_y3804ibo/in --out_dir /tmp/dualdock_boltz_batch_y3804ibo/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 16:16:42] Boltz rc=0; stderr_tail=table/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3108962) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 16:16:43] target=target_a: cache hits 0/14 (namespace=single_target_b1_a6000)
+[2026-02-20 16:16:43] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_j75i7dj_/in --out_dir /tmp/dualdock_boltz_batch_j75i7dj_/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 16:22:45] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3116109) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 16:22:45] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 16:22:45] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_yrviv10m/in --out_dir /tmp/dualdock_boltz_batch_yrviv10m/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 16:29:24] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3123343) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 16:29:25] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 16:29:25] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_6tfn7q63/in --out_dir /tmp/dualdock_boltz_batch_6tfn7q63/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 16:35:46] Boltz rc=0; stderr_tail=table/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3132150) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 16:35:50] target=target_a: cache hits 0/15 (namespace=single_target_b1_a6000)
+[2026-02-20 16:35:50] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_794blfuy/in --out_dir /tmp/dualdock_boltz_batch_794blfuy/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 16:42:36] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3139302) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 16:42:37] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 16:42:37] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_x_rh0ny7/in --out_dir /tmp/dualdock_boltz_batch_x_rh0ny7/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 16:49:16] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3146275) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 16:49:16] target=target_a: cache hits 0/15 (namespace=single_target_b1_a6000)
+[2026-02-20 16:49:16] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_8h8iudmg/in --out_dir /tmp/dualdock_boltz_batch_8h8iudmg/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 16:54:43] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3154064) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 16:54:44] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 16:54:44] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_jerbez6m/in --out_dir /tmp/dualdock_boltz_batch_jerbez6m/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:00:30] Boltz rc=0; stderr_tail=table/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3159960) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:00:30] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:00:30] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_shi9sssh/in --out_dir /tmp/dualdock_boltz_batch_shi9sssh/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:06:21] Boltz rc=0; stderr_tail=table/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3164852) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:06:22] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:06:22] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_r5ulylhd/in --out_dir /tmp/dualdock_boltz_batch_r5ulylhd/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:12:40] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3170432) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:12:41] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:12:41] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_ng5niob2/in --out_dir /tmp/dualdock_boltz_batch_ng5niob2/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:19:14] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3176105) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:19:15] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:19:15] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_hkzp3bwm/in --out_dir /tmp/dualdock_boltz_batch_hkzp3bwm/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:25:52] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3183229) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:25:53] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:25:53] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_x7i2tbmu/in --out_dir /tmp/dualdock_boltz_batch_x7i2tbmu/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:32:06] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3191543) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:32:06] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:32:06] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_2_d6wl65/in --out_dir /tmp/dualdock_boltz_batch_2_d6wl65/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:38:37] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3198355) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:38:38] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:38:38] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_lejo4x2q/in --out_dir /tmp/dualdock_boltz_batch_lejo4x2q/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:44:33] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3203031) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:44:34] target=target_a: cache hits 0/14 (namespace=single_target_b1_a6000)
+[2026-02-20 17:44:34] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_3_qxgu2z/in --out_dir /tmp/dualdock_boltz_batch_3_qxgu2z/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:50:06] Boltz rc=0; stderr_tail=table/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3208141) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:50:07] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:50:07] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_5tbfcsg6/in --out_dir /tmp/dualdock_boltz_batch_5tbfcsg6/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 17:55:48] Boltz rc=0; stderr_tail=table/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3212942) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 17:55:48] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 17:55:48] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_eqgnvp4u/in --out_dir /tmp/dualdock_boltz_batch_eqgnvp4u/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:02:31] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3217227) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:02:32] target=target_a: cache hits 0/14 (namespace=single_target_b1_a6000)
+[2026-02-20 18:02:32] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_uuxin8ax/in --out_dir /tmp/dualdock_boltz_batch_uuxin8ax/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:08:23] Boltz rc=0; stderr_tail=table/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3222432) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:08:24] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 18:08:24] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_9b69tgyw/in --out_dir /tmp/dualdock_boltz_batch_9b69tgyw/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:15:02] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3227605) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:15:03] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 18:15:03] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_b1rc_f0l/in --out_dir /tmp/dualdock_boltz_batch_b1rc_f0l/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:21:11] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3233657) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:21:11] target=target_a: cache hits 0/15 (namespace=single_target_b1_a6000)
+[2026-02-20 18:21:11] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_xnj_drcd/in --out_dir /tmp/dualdock_boltz_batch_xnj_drcd/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:27:30] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3238776) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:27:30] target=target_a: cache hits 0/15 (namespace=single_target_b1_a6000)
+[2026-02-20 18:27:30] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_bw1srlsh/in --out_dir /tmp/dualdock_boltz_batch_bw1srlsh/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:33:46] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3243425) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:33:47] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 18:33:47] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_0nlloif9/in --out_dir /tmp/dualdock_boltz_batch_0nlloif9/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:39:32] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3248690) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:39:32] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 18:39:32] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_4xji52i8/in --out_dir /tmp/dualdock_boltz_batch_4xji52i8/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:46:00] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3253550) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:46:01] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 18:46:01] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_wfiuffpf/in --out_dir /tmp/dualdock_boltz_batch_wfiuffpf/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:52:36] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3259352) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:52:37] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 18:52:37] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_rjmhv1e3/in --out_dir /tmp/dualdock_boltz_batch_rjmhv1e3/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 18:59:09] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3264584) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 18:59:10] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 18:59:10] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_kyk4xc03/in --out_dir /tmp/dualdock_boltz_batch_kyk4xc03/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 19:04:47] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3269785) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+
+[2026-02-20 19:04:48] target=target_a: cache hits 0/16 (namespace=single_target_b1_a6000)
+[2026-02-20 19:04:48] Boltz command: /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/boltz predict /tmp/dualdock_boltz_batch_fly_422m/in --out_dir /tmp/dualdock_boltz_batch_fly_422m/out --model boltz2 --accelerator gpu --devices 1 --override --recycling_steps 1 --sampling_steps 6 --diffusion_samples 1 --sampling_steps_affinity 6 --diffusion_samples_affinity 1 --num_workers 2
+[2026-02-20 19:11:21] Boltz rc=0; stderr_tail=e do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.pin_memory() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:46.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py:57: DeprecationWarning: The argument 'device' of Tensor.is_pinned() is deprecated. Please do not pass this argument. (Triggered internally at /pytorch/aten/src/ATen/native/Memory.cpp:31.)
+  return data.pin_memory(device)
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/home/apodshibiakin/miniforge3/envs/boltz2/bin/b ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/home/apodshibiakin/miniforge3/envs/boltz2/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3274266) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+

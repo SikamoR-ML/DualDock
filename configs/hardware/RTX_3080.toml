@@ -1,0 +1,18 @@
+[hardware]
+name = "RTX_3080"
+cuda_visible_devices = "0"
+
+[rl]
+device = "cuda:0"
+batch_size = 8
+
+[boltz]
+accelerator = "gpu"
+devices = "1"
+num_workers = 0
+recycling_steps = 1
+sampling_steps = 10
+diffusion_samples = 1
+sampling_steps_affinity = 10
+diffusion_samples_affinity = 1
+timeout_sec = 1200

@@ -1,0 +1,117 @@
+[experiment]
+name = "single_target_b1_a6000"
+description = "Server baseline: single-target optimization for b1 on A6000"
+
+[hardware]
+profile = "A6000"
+
+[docking]
+mode = "single"
+
+[executables]
+reinvent4_bin = ""
+reinvent4_root = ""
+boltz_bin = ""
+boltz_root = ""
+python_bin = ""
+
+[paths]
+prior_file = "priors/reinvent.prior"
+agent_file = "priors/reinvent.prior"
+target_a_name = "b1"
+target_b_name = "b2"
+target_a_template = "assets/targets/adrenoreceptors/b1.yaml"
+target_b_template = "assets/targets/adrenoreceptors/b2.yaml"
+
+[rl]
+device = "cuda:0"
+batch_size = 16
+learning_rate = 0.0001
+reward_strategy = "dap"
+sigma = 128
+max_steps = 120
+min_steps = 20
+max_score = 0.95
+checkpoint_prefix = "single_b1_agent"
+checkpoint_every_steps = 30
+use_checkpoint = false
+purge_memories = false
+summary_csv_prefix = "single_b1_staged_learning"
+randomize_smiles = true
+unique_sequences = true
+tb_isim = false
+
+[optimizer]
+name = "adam"
+
+[scoring]
+aggregation = "geometric_mean"
+qed_weight = 0.2
+external_weight = 0.8
+external_property = "target_score"
+
+[selectivity]
+mode = "weighted_sum"
+weight_a = 1.0
+weight_b = 0.0
+reward_shift = 0.0
+reward_clip_min = 0.0
+reward_clip_max = 1.0
+
+[selectivity.penalty]
+off_target_threshold = 2.0
+off_target_penalty = 0.0
+
+[selectivity.normalization.target_a]
+method = "sigmoid"
+midpoint = 0.50
+slope = 8.0
+clip_min = 0.0
+clip_max = 1.0
+invert = false
+
+[selectivity.normalization.target_b]
+method = "sigmoid"
+midpoint = 0.50
+slope = 8.0
+clip_min = 0.0
+clip_max = 1.0
+invert = false
+
+[fallback]
+score = 0.05
+invalid_smiles_score = 0.0
+
+[validation]
+require_rdkit = true
+
+[boltz]
+model = "boltz2"
+score_mode = "prob"
+accelerator = "gpu"
+devices = "1"
+num_workers = 2
+recycling_steps = 1
+sampling_steps = 6
+diffusion_samples = 1
+sampling_steps_affinity = 6
+diffusion_samples_affinity = 1
+timeout_sec = 900
+keep_tmp = false
+
+[output]
+root = "runs"
+rank_by = "best_total_reward"
+plots = false
+
+[postprocess]
+enabled = true
+num_smiles = 1500
+max_sampled_smiles = 1500
+sample_strategy = "multinomial"
+temperature = 1.0
+unique_molecules = true
+randomize_smiles = false
+score_batch_size = 16
+rank_by = "best_total_reward"
+plots = false
